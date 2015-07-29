@@ -1,4 +1,4 @@
-<!--mòdul alertes dins de pla setmanal-->
+<!--mòdul alertes dins el PLA SETMANAL-->
 
 <style>
 	#alertes td, #alertes th {

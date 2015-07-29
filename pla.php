@@ -252,8 +252,8 @@
 	<!--periodiques-->
 	<?php include 'funcions.php' ?>
 	<table id=periodiques cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
-		<tr><th colspan=3 style=background:yellow>AVUI
-		<tr><th>Tasca Periòdica<th>Freqüència<th>Completada
+		<tr><th colspan=3 style=background:yellow>Tasques Periòdiques AVUI
+		<tr><th>Tasca<th>Freqüència<th>Completada
 		<?php
 			$dia=date('w'); //0:diumenge, 1:dilluns, 2:dimarts 
 			$res=mysql_query("SELECT * FROM periodiques WHERE freq=$dia OR freq=0 ORDER BY freq ASC");
