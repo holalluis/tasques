@@ -1,0 +1,56 @@
+body{
+	font-family:Arial;
+}
+
+div{
+	padding:0.2em;
+	margin:0.1em;
+	border-radius:0.1em;
+}
+
+td{
+	border-radius:0.2em;
+}
+
+tr.tasca{
+	font-size:12px;
+	background-color:lightblue;
+	border:1px solid #ccc;
+}
+
+tr[acabada] > td{
+	background-color:#af0;
+}
+
+div.projecte{
+	background-color:white;
+	margin:5px 2px;
+	border:1px solid #ccc;
+	display:inline-block;
+	vertical-align:top;
+	max-height:200px;
+	max-width:34%;
+	overflow:hidden;
+	overflow-y:auto;
+	box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);
+}
+
+button{
+	border:1px solid #666;
+	border-radius:0.1em;
+}
+
+button.boto_area{
+	padding-left :1em;
+	padding-right:1em;
+	margin:0.1em;
+}
+
+/*enllaços visitats i passar el mouse per sobre*/
+a:visited{
+	color:blue;
+}
+
+a:hover{
+	color:#ff007f;
+}
