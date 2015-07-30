@@ -1,13 +1,13 @@
 <?php
 
 /*
-	CANVIA L'AREA D'UN PROJECTE
+	CANVIA EL CAMP AREA D'UN PROJECTE
 */
 
 //connecta a la base de dades
 include 'connecta_mysql.php';
 
-//ENTRADA: id projecte i nova id_area
+//ENTRADA: id projecte (int) i nova id_area (int)
 $id=$_GET['id_projecte'];
 $novaArea=$_GET['novaArea'];
 
