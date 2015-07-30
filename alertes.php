@@ -1,5 +1,4 @@
 <!--mòdul alertes dins el PLA SETMANAL-->
-
 <style>
 	#alertes td, #alertes th {
 		border:1px solid #ccc;
