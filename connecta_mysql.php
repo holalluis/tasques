@@ -5,7 +5,7 @@
  */
 
 mysql_connect("127.0.0.1","root","") or exit("error de connexió");
-mysql_select_db("lbosch");
+mysql_select_db("tasques");
 
 /*
  * SEGURETAT: impedeix als altres servidors que no siguin el localhost fer modificacions
