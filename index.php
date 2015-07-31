@@ -4,9 +4,6 @@
 	<title>Tasques</title>
 	<link rel=stylesheet href='estils.css'>
 	<script src="js/index.js"></script>
-	<style>
-		.menu{font-size:12px;border:1px solid #ccc;padding:0em 3em;border-radius:0;background:#eee}
-	</style>
 </head><body><center>
 
 <?php include "menu.php" ?>
