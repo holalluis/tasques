@@ -1,6 +1,6 @@
 ﻿<?php
 /*
- * Connecta a la base de dades lbosch
+ * Connecta a la base de dades tasques
  *
  */
 
@@ -17,8 +17,6 @@ if($_SERVER['SERVER_NAME']!='localhost')
 	{
 		; //continua
 	}
-	else
-		exit('ERROR. No tens permis per veure aquesta pagina. Escriu password a la url.');
+	else exit('ERROR. No tens permis per veure aquesta pagina. Escriu password a la url.');
 }
-
 ?>
