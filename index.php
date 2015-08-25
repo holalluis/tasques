@@ -77,10 +77,12 @@
 	Servidor: <b><?php echo $_SERVER['SERVER_NAME']; ?></b>
 </div>
 
-<!-- fi pagina: scripts javascript depenent dels arguments GET "ressalta" i "area" -->
+<!-- fi pagina-->
+
+<!--ressalta visualment les tasques del pla setmanal i deadlines-->
 <script>
 <?php
-	//RESSALTA EN COLOR LES TASQUES QUE SON DINS DEL PLA SETMANAL
+	//TASQUES QUE SON DINS DEL PLA SETMANAL
 	$res=mysql_query("SELECT id_tasca FROM pla_setmanal");
 	while($row=mysql_fetch_array($res))
 	{
@@ -88,7 +90,7 @@
 		echo "document.getElementById('tasca'+$id_tasca).style.backgroundColor='orange';";
 	}
 
-	//RESSALTA EN COLOR LES TASQUES QUE TENEN DATA LIMIT 
+	//TASQUES QUE TENEN DATA LIMIT 
 	$res=mysql_query("SELECT id_tasca FROM deadlines");
 	while($row=mysql_fetch_array($res))
 	{
@@ -98,24 +100,15 @@
 ?>
 </script>
 
+<!--processa arguments GET "ressalta" i "area" -->
+<script>
 <?php 
-	//si es demana una index.php?area=, mostra-la, sino, mostra la que té id més petita
-	if(isset($_GET['area']))
-	{
-		$area=$_GET['area'];
-	}
-	else
-	{
-		$res=mysql_query("SELECT MIN(id) FROM arees") or exit('error');
-		$row=mysql_fetch_array($res);
-		$area=$row['MIN(id)'];
-	}
-	echo "<script>mostraArea($area)</script>"; 
+	//argument index.php?area=a, mostra area, sino, mostra la que té id més petita
+	$area=isset($_GET['area']) ? $_GET['area'] : current(mysql_fetch_array(mysql_query("SELECT MIN(id) FROM arees")));
+	echo "mostraArea($area);"; 
 
-	//si l'argument index.php?ressalta= està present a la url, ressalta el projecte especificat
-	if(isset($_GET['ressalta'])) 
-	{
-		echo "<script> ressalta(".$_GET['ressalta'].") </script>"; 
-	}
+	//argument index.php?ressalta=p, ressalta el projecte especificat
+	if(isset($_GET['ressalta'])) echo "ressalta(".$_GET['ressalta'].");"; 
 ?>
+</script>
 
