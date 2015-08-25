@@ -204,7 +204,7 @@
 				echo "<td>$des";
 
 				//Projecte
-				echo "<td> <a href='projecte.php?id=$pro' title='Àrea: $nomArea'>$nomProjecte</a>";
+				echo "<td align=center> <a href='projecte.php?id=$pro' title='Àrea: $nomArea'>$nomProjecte</a>";
 
 				//Botó per Marcar la tasca completada
 				echo "<td align=center>";
@@ -291,3 +291,22 @@
 	<!--alertes-->
 	<?php include 'alertes.php' ?>
 </div>
+
+<script>
+	function tascaDeadline(id)
+	//posa un quadrat vermell a la tasca per marcar que té deadline
+	{
+		document.getElementById(id).childNodes[1].innerHTML+=' <span style=font-size:25px;color:red;margin:0>&#9632</span>'
+	}
+
+	//marca les tasques que tenen data limit
+	<?php
+		$res=mysql_query("	
+							SELECT 	deadlines.id_tasca AS id
+							FROM 	deadlines,pla_setmanal
+							WHERE 	deadlines.id_tasca=pla_setmanal.id_tasca
+						");
+		while($row=mysql_fetch_array($res)) 
+			echo "tascaDeadline(".$row['id'].");\n";
+	?>
+</script>

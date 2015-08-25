@@ -84,7 +84,7 @@
 			else 			echo "<tr id=$id_tasca class=tasca>";
 
 			echo "<td>$descripcio";
-			echo "<td><a href=projecte.php?id=$id_projecte>$nom_projecte</a>";
+			echo "<td align=center><a href=projecte.php?id=$id_projecte>$nom_projecte</a>";
 
 			//dies que falten
 			$falten = (strtotime($deadline)-strtotime(date("Y/m/d")))/(60*60*24);
@@ -94,7 +94,7 @@
 			//botó per marcar la tasca completada
 			echo "<td align=center>";
 			if($acabada==1)
-				echo "<input type=checkbox onclick=modificaTasca($id_tasca,0,this) checked=true>";
+				echo "<input type=checkbox onclick=modificaTasca($id_tasca,0,this) checked>";
 			else
 				echo "<input type=checkbox onclick=modificaTasca($id_tasca,1,this)>";
 
