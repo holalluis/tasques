@@ -86,16 +86,14 @@
 	$res=mysql_query("SELECT id_tasca FROM pla_setmanal");
 	while($row=mysql_fetch_array($res))
 	{
-		$id_tasca=$row['id_tasca'];
-		echo "document.getElementById('tasca'+$id_tasca).style.backgroundColor='orange';";
+		echo "tascaProgramada(".$row['id_tasca'].");\n";
 	}
 
 	//TASQUES QUE TENEN DATA LIMIT 
 	$res=mysql_query("SELECT id_tasca FROM deadlines");
 	while($row=mysql_fetch_array($res))
 	{
-		$id_tasca=$row['id_tasca'];
-		echo "document.getElementById('tasca'+$id_tasca).childNodes[0].innerHTML+=' <span style=font-size:25px;color:red;margin:0>&#9632</span>';";
+		echo "tascaDeadline(".$row['id_tasca'].");\n";
 	}
 ?>
 </script>
@@ -111,4 +109,3 @@
 	if(isset($_GET['ressalta'])) echo "ressalta(".$_GET['ressalta'].");"; 
 ?>
 </script>
-

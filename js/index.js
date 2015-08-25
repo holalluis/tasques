@@ -10,7 +10,20 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
  * Funcions
  */
 
+function tascaProgramada(id)
+//pinta de taronja la tasca id per marcar que està al pla setmanal
+{
+	document.getElementById('tasca'+id).style.backgroundColor='orange'
+}
+
+function tascaDeadline(id)
+//posa un quadrat vermell a la tasca per marcar que té deadline
+{
+	document.getElementById('tasca'+id).childNodes[0].innerHTML+=' <span style=font-size:25px;color:red;margin:0>&#9632</span>'
+}
+
 function llegenda()
+//mostra o amaga la llegenda
 {
 	var l = geId('llegenda')
 	if(l.style.display=='none')
