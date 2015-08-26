@@ -37,7 +37,7 @@
 		</form>
 	<td class=menu>
 		<!--arees-->
-		<span title="Una àrea és un conjunt de projectes">Àrea</span> 
+		<span title="Una àrea és un conjunt de projectes">Àrees</span> 
 		<?php
 			$res=mysql_query("SELECT * FROM arees");
 			while($row=mysql_fetch_array($res))
@@ -48,7 +48,7 @@
 						class=boto_area 
 						id=boto_area$area_id 
 						onclick=mostraArea($area_id) 
-						>$area_nom</button> ";
+						>$area_nom</button>";
 			}
 		?>
 		| <a href="editaArees.php">Configuració</a>
