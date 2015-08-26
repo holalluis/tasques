@@ -8,22 +8,16 @@ div{
 	border-radius:0.1em;
 }
 
-td{
-	border-radius:0.2em;
-}
-
 td.menu{
 	font-size:12px;
 	border:1px solid #ccc;
 	padding:0em 3em;
-	border-radius:0;
 	background:#eee
 }
 
 tr.tasca{
 	font-size:12px;
 	background-color:lightblue;
-	border:1px solid #ccc;
 }
 
 tr[acabada] > td{
