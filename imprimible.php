@@ -27,7 +27,6 @@
 		}
 	</style>
 </head><body><center>
-<?php include "menu.php" ?>
 <!--titol-->
 <h3 style=margin:0.1em>
 	<?php echo current(mysql_fetch_array(mysql_query("SELECT nom FROM arees WHERE id=$area"))) ?>
