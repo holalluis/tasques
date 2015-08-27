@@ -18,7 +18,7 @@
 				ORDER BY deadline ASC";
 		$res=mysql_query($sql) or die("error");
 		
-		echo "<tr><th colspan=3 title='Dates límit en els pròxims 7 dies' style=cursor:help>ALERTES (".mysql_num_rows($res).")";
+		echo "<tr><th colspan=3 title='Dates límit en els pròxims 7 dies' style=cursor:help>Dates Límit Pròximes (".mysql_num_rows($res).")";
 	?>
 	<tr><th>Tasca<th>Projecte<th>Dies (Data Límit)
 		<?php
