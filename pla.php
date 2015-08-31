@@ -213,16 +213,14 @@
 				else
 					echo "<input type=checkbox onclick=modificaTasca($id_tasca,1,this)>";
 
-				//Accions botons: esborrar, moure tasca al dia següent i anterior
+				//Accions botons: moure tasca al dia següent i anterior, esborrar
 				echo "<td align=center>";
-				echo "<button onclick=esborraDelPlaSetmanal($id_tasca) ";
-				echo "	style='font-size:10px;background-color:#e50' title='Esborra del pla setmanal'>X</button> ";
 
 				//botons per moure tasques al dia anterior o el seguent
 				if($dia!=0)
 				{
 					//no es poden passar tasques abans de dilluns
-					echo "	<button 
+					echo "<button 
 								onclick=mouAlDiaAnterior($id)
 								style=font-size:10px 
 								title='Mou al dia anterior'
@@ -239,6 +237,14 @@
 								>&darr;
 							</button>";
 				}
+
+				//botó esborrar
+				echo " 	<button	onclick=esborraDelPlaSetmanal($id_tasca)
+								style='font-size:10px;background-color:#e50' 
+								title='Esborra del pla setmanal'
+								>X
+						</button> ";
+
 
 				//dia anterior
 				$da=$dia;
