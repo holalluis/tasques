@@ -17,7 +17,7 @@
 		}
 		td,th{
 			height:20px;
-			vertical-align:middle;
+			vertical-align:top;
 			overflow-y:hidden;
 		}
 		table{

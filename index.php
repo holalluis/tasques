@@ -65,7 +65,7 @@
 			<td><span style=font-size:20px;color:lightblue>&#9632</span>Tasca 
 			<td><span style=font-size:20px;color:orange>&#9632</span>Tasca al pla setmanal
 			<td><span style=font-size:20px;color:red>&#9632</span>Tasca amb data límit
-			<td><span style=font-size:20px;color:#af0>&#9632</span>Tasca completada
+			<td><span style=font-size:20px;color:#af0>&#9632</span>Tasca en espera
 	</table>
 </div>
 
