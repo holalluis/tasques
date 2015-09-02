@@ -3,6 +3,8 @@
 	<meta charset=utf-8>
 	<title>Tasques</title>
 	<link rel=stylesheet href='estils.css'>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<script src="js/index.js"></script>
 </head><body><center>
 
