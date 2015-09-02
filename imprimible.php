@@ -27,8 +27,12 @@
 		}
 	</style>
 </head><body><center>
-<!--titol-->
+<!--titol: [data] area-->
 <h3 style=margin:0.1em>
+	<script>
+		var avui = new Date()
+		document.write(" ["+avui.toString().substring(0,21)+"]")
+	</script>
 	<?php echo current(mysql_fetch_array(mysql_query("SELECT nom FROM arees WHERE id=$area"))) ?>
 </h3>
 
