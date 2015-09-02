@@ -90,10 +90,10 @@
 	}
 
 	//TASQUES QUE TENEN DATA LIMIT 
-	$res=mysql_query("SELECT id_tasca FROM deadlines");
+	$res=mysql_query("SELECT id_tasca,deadline FROM deadlines");
 	while($row=mysql_fetch_array($res))
 	{
-		echo "tascaDeadline(".$row['id_tasca'].");\n";
+		echo "tascaDeadline(".$row['id_tasca'].",'".$row['deadline']."');\n";
 	}
 ?>
 </script>

@@ -52,7 +52,7 @@
 
 		function guarda(area)
 		{
-			var nouNom=document.getElementById('nouNom_area'+area).value
+			var nouNom=encodeURIComponent(document.getElementById('nouNom_area'+area).value)
 			window.location='canviaNomArea.php?id_area='+area+'&nouNom='+nouNom
 		}
 	</script>

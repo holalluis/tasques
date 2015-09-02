@@ -26,7 +26,7 @@ function modificaTasca(id,acabada,input)
 function guarda()
 //guarda el canvi de nom
 {
-	var nouNom=document.getElementById('nouNom').value
+	var nouNom=encodeURIComponent(document.getElementById('nouNom').value)
 	window.location='canviaNomProjecte.php?id_projecte='+id+'&nouNom='+nouNom
 }
 

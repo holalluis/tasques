@@ -16,10 +16,10 @@ function tascaProgramada(id)
 	document.getElementById('tasca'+id).style.backgroundColor='orange'
 }
 
-function tascaDeadline(id)
+function tascaDeadline(id,deadline)
 //posa un quadrat vermell a la tasca per marcar que té deadline
 {
-	document.getElementById('tasca'+id).childNodes[0].innerHTML+=' <span style=font-size:25px;color:red;margin:0>&#9632</span>'
+	document.getElementById('tasca'+id).childNodes[0].innerHTML+=" <span title='"+deadline+"' style=font-size:25px;color:red;margin:0>&#9632</span>"
 }
 
 function llegenda()
