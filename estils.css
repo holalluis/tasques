@@ -1,9 +1,9 @@
-body{
-	font-family:Arial;
-}
+*{margin:0}
+body{font-family:Arial;}
+h2,h4{margin:0.7em}
 
 div{
-	padding:0.2em;
+	padding:0.15em;
 	margin:0.1em;
 	border-radius:0.1em;
 }
@@ -11,7 +11,7 @@ div{
 td.menu{
 	font-size:12px;
 	border:1px solid #ccc;
-	padding:0em 3em;
+	padding:1.8541em 3em;
 	background:#eee
 }
 
@@ -20,9 +20,7 @@ tr.tasca{
 	background-color:lightblue;
 }
 
-tr[acabada] > td{
-	background-color:#af0;
-}
+tr[acabada] > td{ background-color:#af0; }
 
 div.projecte{
 	background-color:white;
@@ -49,10 +47,5 @@ button.boto_area{
 }
 
 /*enllaços visitats i passar el mouse per sobre*/
-a:visited{
-	color:blue;
-}
-
-a:hover{
-	color:#ff007f;
-}
+a:visited{ color:blue; }
+a:hover{ color:#ff007f; }
