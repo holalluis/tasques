@@ -8,7 +8,7 @@
 	<meta charset=utf-8>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Tasques</title>
+	<title>Imprimir</title>
 	<style>
 		body{
 			font-family:Arial;

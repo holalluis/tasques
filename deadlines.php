@@ -3,7 +3,7 @@
 	<meta charset=utf-8>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Pàgina principal</title>
+	<title>Tasques | Dates Límit</title>
 	<link rel=stylesheet href='estils.css'>
 	<script>
 		function esborraDeadline(id)

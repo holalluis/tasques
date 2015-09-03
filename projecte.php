@@ -13,7 +13,7 @@
 	<meta charset=utf-8 />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title><?php echo $row['nom'] ?></title>
+	<title>Tasques | <?php echo $row['nom'] ?></title>
 	<link rel=stylesheet href='estils.css'>
 	<style> th{ border:1px solid #ccc; } </style>
 	<script>

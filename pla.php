@@ -3,7 +3,7 @@
 	<meta charset=utf-8>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Pla setmanal</title>
+	<title>Tasques | Pla setmanal</title>
 	<link rel=stylesheet href='estils.css'>
 	<style>
 		th,td {
