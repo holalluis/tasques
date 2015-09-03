@@ -1,6 +1,8 @@
 <?php include 'connecta_mysql.php' ?>
 <!doctype html><html><head>
 	<meta charset=utf-8>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<title>Pàgina principal</title>
 	<link rel=stylesheet href='estils.css'>
 	<script>
