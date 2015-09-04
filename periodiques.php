@@ -20,6 +20,7 @@
 
 <!--titol-->
 <h2>Tasques periòdiques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM periodiques"))?>)</h2>
+<h4>Apareixen al pla setmanal</h4>
 
 <!--taula de tasques periodiques-->
 <table cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
