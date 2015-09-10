@@ -6,7 +6,7 @@
 	}
 </style>
 
-<table id=alertes cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
+<table id=alertes cellpadding=5>
 	<?php
 		//llista de deadlines amb menys de 7 dies
 		$sql="	SELECT * 

@@ -48,7 +48,7 @@
 <?php include 'menu.php' ?>
 <h2> Dates límit (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM deadlines")) ?>) </h2>
 
-<table cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
+<table cellpadding=5>
 	<tr>
 		<th>Tasca
 		<th>Projecte

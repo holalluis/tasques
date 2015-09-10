@@ -28,26 +28,9 @@
 		}
 	</style>
 	<script>
-		function avui()
-		{
-			var avui = new Date()
-			var nom
-			switch(avui.getDay())
-			{
-				case 0: nom="Diumenge";break;
-				case 1: nom="Dilluns";break;
-				case 2: nom="Dimarts";break;
-				case 3: nom="Dimecres";break;
-				case 4: nom="Dijous";break;
-				case 5: nom="Divendres";break;
-				case 6: nom="Dissabte";break;
-			}
-			document.getElementById('avui').innerHTML=nom
-		}
 		function init()
 		{
 			ressaltaDiaActual()
-			avui()
 		}
 		function estatTascaPeriodica(estat,id)
 		//seteja un cookie que marqui la tasca com a completada
@@ -137,8 +120,6 @@
 	Tasques per aquesta setmana (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM pla_setmanal")) ?>)
 </h2>
 
-<h4>Avui és <span id=avui></span></h4>
-
 <?php
 	function espai()
 	{
@@ -147,7 +128,7 @@
 ?>
 
 <!--tasques programades per aquesta setmana-->
-<table cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
+<table cellpadding=5>
 	<tr> <th>Dia <th>Tasca <th>Projecte <th>Completada <th>Opcions
 	<tr> <?php
 			//totes les tasques del pla setmanal amb tota la seva info associada
@@ -259,7 +240,7 @@
 <div style=margin:1em>
 	<!--periodiques-->
 	<?php include 'funcions.php' ?>
-	<table id=periodiques cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
+	<table id=periodiques cellpadding=5>
 		<tr><th colspan=3 style=background:yellow>Tasques Periòdiques AVUI
 		<tr><th>Tasca<th>Freqüència<th>Completada
 		<?php

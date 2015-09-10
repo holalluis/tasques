@@ -19,7 +19,9 @@ function tascaProgramada(id)
 function tascaDeadline(id,deadline)
 //posa un quadrat vermell a la tasca per marcar que té deadline
 {
-	document.getElementById('tasca'+id).childNodes[0].innerHTML+=" <span title='"+deadline+"' style=font-size:25px;color:red;margin:0>&#9632</span>"
+	//calcula els dies
+	var dies = Math.ceil(parseInt(new Date(deadline) - new Date())/1000/60/60/24)
+	document.getElementById('tasca'+id).childNodes[0].innerHTML+=" (<b style=color:red>"+dies+" dies</b>)"
 }
 
 function llegenda()

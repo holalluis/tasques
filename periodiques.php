@@ -23,7 +23,7 @@
 <h4>Apareixen al pla setmanal</h4>
 
 <!--taula de tasques periodiques-->
-<table cellpadding=5 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1)">
+<table cellpadding=5>
 	<tr><th>Tasca			<th>Freqüència &darr;		<th>Opcions
 	<?php
 		$result=mysql_query("SELECT * FROM periodiques ORDER BY freq ASC");

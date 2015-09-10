@@ -1,4 +1,4 @@
-<div>
+<div align=left>
 <!-- fragment dins la pagina index.php -->
 <?php
 	//connecta
@@ -53,20 +53,23 @@
 			}
 
 			//botó esborrar
-			echo "<td> <button 
+			echo "<td align=center> <button 
 							onclick=esborraTasca($id_task)
 							style='background-color:#e50;font-size:10px' >
 							Esborra</button>";
 		}
 		//formulari nova tasca
-		echo "<tr><td colspan=2 class=tasca>";
-		echo "<form action=novaTasca.php method=get id=form_nt_pr_$id >";
+		echo "<tr><td colspan=3>
+				<form action=novaTasca.php method=get id=form_nt_pr_$id >";
+
+		//input hidden amb el valor de l'id projecte
+		echo "<input name=id_projecte value=$id style=display:none>";
 
 		//input nova tasca
 		echo "<input 	name=descripcio 
 						placeholder='Nova tasca' 
 						autocomplete=off 
-						style='border:1px solid #ccc;padding:0.2em;width:95%' 
+						style='border:1px solid #ccc;padding:0.2em;' 
 						required ";
 		//donar focus a <input> nova tasca si es el projecte ressaltat
 		//treure ressaltat al treure focus del <input>
@@ -74,20 +77,16 @@
 		{
 			echo "id=focus onblur=ressalta_off($id) ";
 		}
-		echo " >";
-
-		//input hidden amb el valor de l'id projecte
-		echo "<input name=id_projecte value=$id style=display:none>";
+		echo ">";
 
 		//submit
-		echo "<td class=tasca><button type=submit style='width:95%' >Ok</button>";
+		echo " <button type=submit style=font-size:10px>Ok</button>";
 
 		//input hidden amb la seguent url a anar despres d'insertar una nova tasca
 		echo "<tr style=display:none><td><input name=url_seguent value='index.php?area=$area&ressalta=$id'>";
 
-		echo "</form>";
-		echo "</table>";
-		echo "</div>";	//fi div projecte
+		echo "</form></table></div>";
+		//fi div projecte
 	}
 ?>
 </div>
