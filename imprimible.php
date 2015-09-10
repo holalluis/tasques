@@ -61,8 +61,10 @@
 		$fila=0; //comptador de files
 		while($roww=mysql_fetch_array($res))
 		{
+			$id=$roww['id'];
+			$color = $roww['acabada'] ? "style=background:#af0" : "";
 			//descripcio tasca
-			echo "<tr><td>".$roww['descripcio'];
+			echo "<tr $color id=$id><td>".$roww['descripcio'];
 			$fila++;
 		}
 		while($fila<10)
@@ -75,3 +77,18 @@
 	}
 	?>
 </table>
+
+<!--pinta de taronja les tasques programades-->
+<script>
+	<?php
+		$sql="	SELECT tasques.id 
+				FROM tasques,pla_setmanal,projectes 
+				WHERE tasques.id=pla_setmanal.id_tasca AND projectes.id=tasques.id_projecte AND id_area=$area";
+		$res=mysql_query($sql) or die('error');
+		while($row=mysql_fetch_array($res))
+		{
+			$id=$row['id'];
+			echo "document.getElementById($id).style.backgroundColor='orange'\n";
+		}
+	?>
+</script>

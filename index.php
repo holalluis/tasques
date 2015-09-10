@@ -14,7 +14,7 @@
 <table style=margin:1em cellpadding=0><tr>
 	<td>
 		<!--titol-->
-		<h2 style=margin-right:4em>
+		<h2 style="cursor:pointer;margin-right:4em" onclick="window.location=window.location.href">
 			Tasques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM tasques")) ?>)
 		</h2>
 	<td class=menu>
