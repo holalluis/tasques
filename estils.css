@@ -1,6 +1,7 @@
 *{margin:0}
 body{font-family:Arial;}
 h2,h4{margin:0.7em}
+/* table{border-collapse:collapse} */
 
 div{
 	padding:0.15em;
@@ -12,7 +13,7 @@ td.menu{
 	font-size:12px;
 	border:1px solid #ccc;
 	padding:1.8541em 3em;
-	background:#eee
+	background:#eee;
 }
 
 tr.tasca{
@@ -35,6 +36,8 @@ div.projecte{
 	box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);
 }
 
+div.projecte:hover { background-color:#F7F8E0; }
+
 button{
 	border:1px solid #666;
 	border-radius:0.1em;
@@ -46,6 +49,7 @@ button.boto_area{
 	margin:0.1em;
 }
 
-/*enllaços visitats i passar el mouse per sobre*/
+/*enllaços*/
+a{text-decoration:none}
 a:visited{ color:blue; }
 a:hover{ color:#ff007f; }
