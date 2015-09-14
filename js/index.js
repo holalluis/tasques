@@ -10,12 +10,6 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
  * Funcions
  */
 
-function focusNovaTasca(id)
-//selecciona input nova tasca al passar per sobre el ratoli
-{
-	geId('novaTascaId'+id).focus()
-}
-
 function tascaProgramada(id)
 //pinta de taronja la tasca id per marcar que està al pla setmanal
 {

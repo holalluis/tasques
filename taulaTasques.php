@@ -18,7 +18,7 @@
 		//crea un nou <div> 
 		echo "<div 
 				class=projecte id=$id area=$area style=display:none 
-				onmouseover=focusNovaTasca('$id') >";
+				>";
 
 		//taula de tasques
 		echo "<table cellpadding=3 style='margin:3px;width:100%'>";
@@ -69,7 +69,6 @@
 
 		//input nova tasca
 		echo "<input 	name=descripcio 
-						id=novaTascaId$id
 						placeholder='Nova tasca' 
 						autocomplete=off 
 						style='border:1px solid #ccc;padding:0.2em;' 

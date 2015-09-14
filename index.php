@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<script src="js/index.js"></script>
-</head><body><center>
+</head><body onkeydown="tecla(event)"><center>
 
 <?php include "menu.php" ?>
 
@@ -14,7 +14,7 @@
 <table style=margin:1em cellpadding=0><tr>
 	<td>
 		<!--titol-->
-		<h2 style="cursor:pointer;margin-right:4em" onclick="window.location=window.location.href">
+		<h2 style="cursor:pointer;margin-right:4em" onclick="window.location=window.location.pathname">
 			Tasques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM tasques")) ?>)
 		</h2>
 	<td class=menu>
