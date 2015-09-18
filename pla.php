@@ -42,7 +42,7 @@
 			//esborra el cookie si la tasca no està completada
 			if(estat==false)
 			{
-				console.log("esborrant cookie "+id)
+				console.log("esborrant cookie periodica"+id)
 				document.cookie="periodica"+id+"=false; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 				return
 			}

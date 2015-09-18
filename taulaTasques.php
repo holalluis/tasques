@@ -44,7 +44,7 @@
 			echo $roww['descripcio'];
 
 			//checkbox per tasca acabada
-			echo "<td align=center style=padding:0>";
+			echo "<td align=center width=1>";
 			if($acabada==1)
 			{
 				echo "<input type=checkbox onclick=modificaTasca($id_task,0,this) checked=true>";
@@ -55,7 +55,7 @@
 			}
 
 			//botó esborrar
-			echo "<td align=center> <button 
+			echo "<td align=center width=1> <button 
 							onclick=esborraTasca($id_task)
 							style='background-color:#e50;font-size:10px' >
 							Esborra</button>";
