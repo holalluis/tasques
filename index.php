@@ -63,12 +63,12 @@
 	 style="display:none;font-size:12px;background-color:#eee;border:1px solid #ccc">
 	<table style="margin:0px;padding:0px">
 		<tr>
-			<td><span style=font-size:20px;color:yellow>&#9632</span>Àrea actual
-			<td><span style=font-size:20px;color:white>&#9632</span>Projecte 
-			<td><span style=font-size:20px;color:lightblue>&#9632</span>Tasca 
-			<td><span style=font-size:20px;color:orange>&#9632</span>Tasca al pla setmanal
-			<td><span style=font-size:20px;color:red>&#9632</span>Tasca amb data límit
-			<td><span style=font-size:20px;color:#af0>&#9632</span>Tasca en espera
+			<td><span style=font-size:20px;color:lightblue>&#9632</span>	Tasca pendent
+			<td><span style=font-size:20px;color:#af0>&#9632</span>			Tasca en espera
+			<td><span style=font-size:20px;color:orange>&#9632</span>		Tasca programada
+			<td><span style=font-size:20px;color:red>&#9632</span>			Tasca amb data límit
+			<td><span style=font-size:20px;color:white>&#9632</span>		Projecte 
+			<td><span style=font-size:20px;color:yellow>&#9632</span>		Àrea actual
 	</table>
 </div>
 
