@@ -108,3 +108,5 @@
 		}
 	?>
 </table>
+
+<!--fi pagina--><?php include 'footer.php' ?>

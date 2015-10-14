@@ -281,6 +281,8 @@
 	<?php include 'alertes.php' ?>
 </div>
 
+<!--fi pagina--><?php include 'footer.php' ?>
+ 
 <script>
 	function tascaDeadline(id)
 	//posa un quadrat vermell a la tasca per marcar que té deadline

@@ -64,3 +64,5 @@
 		<td align=center><button type=submit>ok</button>
 		</form>
 </table>
+
+<!--fi pagina--><?php include 'footer.php' ?>

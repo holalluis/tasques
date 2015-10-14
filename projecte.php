@@ -197,7 +197,8 @@
 	Esborra projecte
 </button>
 
-<!--fi pagina-->
+<!--fi pagina--><?php include 'footer.php' ?>
+
 <script>
 	/*
 		modifica el select per enviar al pla setmanal seleccionant el dia de la setmana que som avui (0 a 6)

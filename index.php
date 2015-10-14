@@ -75,12 +75,7 @@
 <!--Taula de projectes i tasques-->
 <?php include 'taulaTasques.php' ?>
 
-<!--nom del servidor: si sóc jo dirà localhost-->
-<div style=font-size:12px;margin:1em>
-	Servidor: <b><?php echo $_SERVER['SERVER_NAME']; ?></b>
-</div>
-
-<!-- fi pagina-->
+<!--fi pagina--><?php include 'footer.php' ?>
 
 <!--ressalta visualment les tasques del pla setmanal i deadlines-->
 <script>
