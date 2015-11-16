@@ -13,14 +13,19 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
 function tascaProgramada(id)
 //pinta de taronja la tasca id per marcar que està al pla setmanal
 {
+	if(!document.getElementById('tasca'+id))return
+
 	document.getElementById('tasca'+id).style.backgroundColor='orange'
 }
 
 function tascaDeadline(id,deadline)
 //posa un quadrat vermell a la tasca per marcar que té deadline
 {
+	if(!document.getElementById('tasca'+id)) return
+
 	//calcula els dies
 	var dies = Math.ceil(parseInt(new Date(deadline) - new Date())/1000/60/60/24)
+	//pinta els dies de vermell 
 	document.getElementById('tasca'+id).childNodes[0].innerHTML+=" (<b style=color:red>"+dies+" dies</b>)"
 }
 

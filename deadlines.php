@@ -30,15 +30,15 @@
 	</script>
 	<style>
 		th,td {
-			border-radius:0.2em;
 			border:1px solid #ccc;
+			font-size:13px;
 		}
 		th{
 			font-size:13px;
 		}
 		tr.tasca > td{
 			background-color:#f78181;
-			border:none;
+			border:1px solid #fff;
 		}
 		tr[acabada] > td, tr[acabada] > th{
 			background-color:#af0;

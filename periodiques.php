@@ -7,6 +7,7 @@
 	<link rel=stylesheet href='estils.css'>
 	<style>
 		th,td{border:1px solid #ccc;font-size:12px}
+		td{border:1px solid #fff}
 	</style>
 	<script>
 		function esborra(id)
@@ -48,10 +49,10 @@
 		}
 	?>
 	<?php espaiador() ?>
-	<tr><td>
+	<tr><th>
 		<form action=novaTascaPeriodica.php method=GET>
 			<input name=nom placeholder="Nova tasca periòdica" required autocomplete=off>
-			<td><select name=freq>
+			<th><select name=freq>
 				<option value=0><?php echo freq(0) ?>
 				<option value=1><?php echo freq(1) ?>
 				<option value=2><?php echo freq(2) ?>
@@ -61,7 +62,7 @@
 				<option value=6><?php echo freq(6) ?>
 				<option value=7><?php echo freq(7) ?>
 			</select>
-		<td align=center><button type=submit>ok</button>
+		<th align=center><button type=submit>ok</button>
 		</form>
 </table>
 

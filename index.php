@@ -7,8 +7,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<script src="js/index.js"></script>
 </head><body><center>
-
-<?php include "menu.php" ?>
+<!--menu--><?php include "menu.php"?>
 
 <!--titol, menú nou projecte i àrees-->
 <table style=margin:1em cellpadding=0><tr>
@@ -21,8 +20,7 @@
 		<form action="nouProjecte.php" method=get style="display:inline-block">
 			<input name=nom placeholder="Nou projecte" 
 				autocomplete=off required 
-				style="padding:0.5em;border:1px solid #ccc"
-			>
+				style="padding:0.5em;border:1px solid #ccc">
 			<!-- selecciona area pel nou projecte: SEMPRE OCULT, ja que es selecciona sol (fx mostraArea()) -->
 			<select name=area id=area_select style=display:none>
 				<?php
@@ -72,10 +70,10 @@
 	</table>
 </div>
 
-<!--Taula de projectes i tasques-->
-<?php include 'taulaTasques.php' ?>
+<hr>
 
-<!--fi pagina--><?php include 'footer.php' ?>
+<!--Taula de projectes i tasques--><?php include 'taulaTasques.php'?>
+<!--fi pagina--><?php include 'footer.php'?>
 
 <!--ressalta visualment les tasques del pla setmanal i deadlines-->
 <script>
@@ -93,12 +91,9 @@
 	{
 		echo "tascaDeadline(".$row['id_tasca'].",'".$row['deadline']."');\n";
 	}
-?>
-</script>
 
-<!--processa arguments GET "ressalta" i "area" -->
-<script>
-<?php 
+	/* Processa arguments GET "ressalta" i "area" */
+
 	//argument index.php?area=a, mostra area, sino, mostra la que té id més petita
 	$area=isset($_GET['area']) ? $_GET['area'] : current(mysql_fetch_array(mysql_query("SELECT MIN(id) FROM arees")));
 	echo "mostraArea($area);"; 

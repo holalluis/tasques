@@ -1,19 +1,28 @@
 *{margin:0}
-body{font-family:Arial;}
+body{font-family:Helvetica}
 h2,h4{margin:0.7em}
-/* table{border-collapse:collapse} */
+hr{
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0; 
+}
+/* 
+*/
+table{border-collapse:collapse} 
+td{border:1px solid #fff}
 
 div{
 	padding:0.1em;
 	margin:0.1em;
-	border-radius:0.1em;
 }
 
 td.menu{
 	font-size:12px;
-	border:1px solid #ccc;
+	border:1px solid #fff;
 	padding:1.8541em 3em;
-	background:#eee;
 }
 
 tr.tasca{
@@ -29,13 +38,15 @@ div.projecte{
 	border:1px solid #ccc;
 	display:inline-block;
 	vertical-align:top;
-	max-height:200px;
+	max-height:220px;
 	width:19%;
 	overflow:hidden;
 	overflow-y:auto;
 }
 
+/*
 div.projecte:hover { background-color:#F7F8E0; }
+*/
 
 button{
 	border:1px solid #666;
@@ -51,4 +62,6 @@ button.boto_area{
 /*enllaços*/
 a{text-decoration:none}
 a:visited{ color:blue; }
+/*
 a:hover{ color:#ff007f; }
+*/

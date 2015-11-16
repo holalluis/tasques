@@ -8,7 +8,7 @@
 		}
 		else 
 			echo "<a href='$url'>$contingut</a>";
-		echo " | ";
+		echo " &#9474; ";
 	}
 ?>
 <div>
@@ -20,3 +20,5 @@
 		creaLink("imprimibleMenu.php",	"Imprimir");
 	?>
 </div>
+
+<hr>

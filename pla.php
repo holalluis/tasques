@@ -6,17 +6,13 @@
 	<title>Tasques | Pla setmanal</title>
 	<link rel=stylesheet href='estils.css'>
 	<style>
-		th,td {
-			border-radius:0.2em;
+		th,td{
 			border:1px solid #ccc;
-			font-size:12px;
-		}
-		th{
 			font-size:13px;
 		}
 		tr.tasca > td, tr.tasca>th{
 			background-color:orange;
-			border:none;
+			border:1px solid #fff;
 		}
 		tr[acabada] > td, tr[acabada] > th{
 			background-color:#af0;
@@ -26,6 +22,7 @@
 			vertical-align:top;
 			margin:1em;
 		}
+		table{border:1px solid #ccc}
 	</style>
 	<script>
 		function init()

@@ -8,6 +8,7 @@
 	$result=mysql_query($sql);
 	$row=mysql_fetch_array($result);
 	$area=$row['id_area'];
+	$en_espera=$row['en_espera'];
 ?>
 <!doctype html><html><head>
 	<meta charset=utf-8 />
@@ -65,10 +66,7 @@
 
 <!--tasques del projecte-->
 <table cellpadding=7 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);">
-	<tr>
-		<th colspan=3>Tasca
-		<th>Programar al Pla Setmanal
-		<th>Data Límit
+	<tr> <th colspan=3>Tasques <th>Programar al Pla Setmanal <th>Data Límit
 	<?php
 		//demana a la base de dades totes les tasques del projecte
 		$sql="SELECT * FROM tasques WHERE id_projecte=$id";
@@ -146,9 +144,11 @@
 			{
 				echo "<input type=date id=deadline_$id_task> ";
 				echo "<button onclick=novaDeadline($id_task)> ok </button>";
-			}else 
+			}
+			else 
+			{
 				echo current(mysql_fetch_array(mysql_query("SELECT deadline FROM deadlines WHERE id_tasca=$id_task")));
-
+			}
 		}
 	?>
 	<!--formulari nova tasca-->
@@ -168,36 +168,48 @@
 	</form>
 </table>
 
-<br><br>
+<!--opcions del projecte-->
+<table cellpadding=10 style=margin:1em>
+	<tr><th rowspan=3 style=background:#ccc>Opcions
+	<!--projecte en espera?-->
+	<th>
+		<div style=padding:1em>
+			<?php
+				if($en_espera) echo "<b style=background:#af0;padding:1em>Projecte pausat</b>";
+				else echo "<b style=background:yellow;padding:1em>Projecte actiu</b>";
+			?>
+			<button onclick="window.location='toggleEnEsperaProjecte.php?id=<?php echo $id?>'">
+				Canvia
+			</button>
+		</div>
+	<!--canvia AREA -->
+	<tr><th>
+		Àrea actual: 
+		<select onchange=canviaArea() id=selectArea>
+			<?php
+				$area_actual = $row['id_area'];
+				$res=mysql_query("SELECT * FROM arees");
+				while($row=mysql_fetch_array($res))
+				{
+					$id_area = $row['id'];
+					$nom_area = $row['nom'];
 
-<!--SELECT AREA -->
-Àrea actual: 
-<select onchange=canviaArea() id=selectArea>
-	<?php
-		$area_actual = $row['id_area'];
-		$res=mysql_query("SELECT * FROM arees");
-		while($row=mysql_fetch_array($res))
-		{
-			$id_area = $row['id'];
-			$nom_area = $row['nom'];
+					if($id_area == $area_actual)
+						echo "<option value=$id_area selected>$nom_area</option>";
+					else
+						echo "<option value=$id_area>$nom_area</option>";
+				}
+			?>
+		</select>
+	<!--boto esborra projecte -->
+	<tr><th>
+		<button style=background-color:#f77;padding:0.5em 
+			onclick=esborraProjecte()>
+			Esborra projecte
+		</button>
+</table>
 
-			if($id_area == $area_actual)
-				echo "<option value=$id_area selected>$nom_area</option>";
-			else
-				echo "<option value=$id_area>$nom_area</option>";
-		}
-	?>
-</select>
-
-<br><br>
-
-<!--boto esborra projecte -->
-<button style=background-color:#f77;padding:0.5em 
-	onclick=esborraProjecte()>
-	Esborra projecte
-</button>
-
-<!--fi pagina--><?php include 'footer.php' ?>
+<!--fi pagina--><?php include 'footer.php'?>
 
 <script>
 	/*

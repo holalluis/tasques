@@ -58,6 +58,9 @@
 			window.location='canviaNomArea.php?id_area='+area+'&nouNom='+nouNom
 		}
 	</script>
+	<style>
+		td{border:1px solid #000}
+	</style>
 </head><body><center>
 <?php include 'menu.php' ?>
 
