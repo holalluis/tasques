@@ -46,7 +46,7 @@
 	</style>
 </head><body><center>
 <?php include 'menu.php' ?>
-<h2> Dates límit (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM deadlines")) ?>) </h2>
+<h2> Dates Límit (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM deadlines")) ?>) </h2>
 
 <table cellpadding=5>
 	<tr>
