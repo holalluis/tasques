@@ -1,4 +1,4 @@
-<div align=left>
+<div style="text-align:left;padding:2em">
 <!-- fragment dins la pagina index.php -->
 <?php
 	//connecta
@@ -30,7 +30,7 @@
 		//si no hi ha tasques marca-ho en gris
 		if(mysql_num_rows($res)==0)
 		{
-			echo "<tr><td style='background:#ccc;font-size:10px;color:#666' colspan=2>No hi ha tasques";
+			echo "<tr><td style='background:#ccc;font-size:10px;color:#666;text-align:center' colspan=3>No hi ha tasques";
 		}
 
 		//recorre les tasques
@@ -59,10 +59,11 @@
 			}
 
 			//botó esborrar
-			echo "<td align=center width=1> <button 
-							onclick=esborraTasca($id_task)
-							style='background-color:#e50;font-size:10px' >
-							Esborra</button>";
+			echo "<td align=center width=1> 
+					<button 
+						onclick=esborraTasca($id_task)
+						style='background-color:#e50;font-size:10px' >
+						Esborra</button>";
 		}
 		//formulari nova tasca
 		echo "<tr><td colspan=2>
@@ -75,7 +76,7 @@
 		echo "<input 	name=descripcio 
 						placeholder='Nova tasca' 
 						autocomplete=off 
-						style='border:1px solid #ccc;padding:0.2em;' 
+						style='border:1px solid #bbb;padding:0.2em;' 
 						required ";
 		//donar focus a <input> nova tasca si es el projecte ressaltat
 		//treure ressaltat al treure focus del <input>

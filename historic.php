@@ -35,7 +35,7 @@
 					";
 
 				//esborra de les tasques acabades
-				echo "<td> <button onclick=window.location='esborraAcabada.php?id=$id'>Esborra de l'historic</button>";
+				echo "<td> <button onclick=window.location='esborraAcabada.php?id=$id'>Esborra de l'històric</button>";
 			}
 		?>
 </table>

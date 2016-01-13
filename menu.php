@@ -9,6 +9,7 @@
 		else 
 			echo "<a href='$url'>$contingut</a>";
 		echo " &#9474; ";
+		//echo " \ ";
 	}
 ?>
 <div style="padding:1em 0 0 0">

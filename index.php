@@ -18,9 +18,6 @@
 		</h2>
 	<td class=menu>
 		<form action="nouProjecte.php" method=get style="display:inline-block">
-			<input name=nom placeholder="Nou projecte" 
-				autocomplete=off required 
-				style="padding:0.5em;border:1px solid #ccc">
 			<!-- selecciona area pel nou projecte: SEMPRE OCULT, ja que es selecciona sol (fx mostraArea()) -->
 			<select name=area id=area_select style=display:none>
 				<?php
@@ -33,7 +30,10 @@
 					}
 				?>
 			</select>
-			<button type=submit>OK</button> 
+			<input name=nom placeholder="Nou projecte" 
+				autocomplete=off required 
+				style="padding:0.5em;border:1px solid #ccc"><!--
+			--><button type=submit style=height:2.25em>OK</button> 
 		</form>
 	<td class=menu>
 		<!--arees-->
@@ -60,27 +60,23 @@
 				$i_area++;
 			}
 		?>
-		| <a href="editaArees.php">Configuració</a>
+		| <a href="editaArees.php">Afegir àrees</a>
 		| <a href=# onclick=llegenda()>Llegenda</a>
 </table>
 
 <!--llegenda-->
-<div id=llegenda
-	 title=Llegenda
-	 style="display:none;"
-	 >
+<div id=llegenda title=Llegenda style=display:none>
 	<table style="margin:0px;padding:0px">
 		<tr>
-			<td><span style="border:1px solid black;padding:0.3em;background:lightblue"	>Tasca pendent</span>
-			<td><span style="border:1px solid black;padding:0.3em;background:orange"		>Tasca programada</span>
-			<td><span style="border:1px solid black;padding:0.3em;background:red"		>Tasca amb data límit</span>
-			<td><span style="border:1px solid black;padding:0.3em;background:white"		>Projecte </span>
+			<td><span style="border:1px solid black;padding:0.3em;background:white"		> Projecte 			   </span>
+			<td><span style="border:1px solid black;padding:0.3em;background:lightblue"	> Tasca				   </span>
+			<td><span style="border:1px solid black;padding:0.3em;background:orange"	> Tasca programada     </span>
+			<td><span style="border:1px solid black;padding:0.3em;background:#af0"		> Tasca en espera      </span>
+			<td><span style="border:1px solid black;padding:0.3em;background:red"		> Tasca amb data límit </span>
 	</table>
 </div>
 
-<hr>
-
-<!--Taula de projectes i tasques--><?php include 'taulaTasques.php'?>
+<!--tasques--><?php include 'taulaTasques.php'?>
 <!--fi pagina--><?php include 'footer.php'?>
 
 <!--ressalta visualment les tasques del pla setmanal i deadlines-->

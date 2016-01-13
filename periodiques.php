@@ -21,7 +21,7 @@
 
 <!--titol-->
 <h2>Tasques periòdiques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM periodiques"))?>)</h2>
-<h4>Apareixen al pla setmanal</h4>
+<h4>Configuració per tasques repetitives que apareixen al pla setmanal en funció de la seva freqüència</h4>
 
 <!--taula de tasques periodiques-->
 <table cellpadding=5>
