@@ -40,15 +40,24 @@
 		<span title="Una àrea és un conjunt de projectes">Àrees</span> 
 		<?php
 			$res=mysql_query("SELECT * FROM arees");
+			$n_arees=mysql_num_rows($res);
+			$i_area=1;
 			while($row=mysql_fetch_array($res))
 			{
 				$area_nom=$row['nom'];
 				$area_id=$row['id'];
+				switch($i_area)
+				{
+					case 1:$classe_boto_area="esquerre";break;
+					case $n_arees:$classe_boto_area="dreta";break;
+					default:$classe_boto_area="";break;
+				}
 				echo "<button 
-						class=boto_area 
+						class='boto_area $classe_boto_area' 
 						id=boto_area$area_id 
 						onclick=mostraArea($area_id) 
 						>$area_nom</button>";
+				$i_area++;
 			}
 		?>
 		| <a href="editaArees.php">Configuració</a>
@@ -58,15 +67,14 @@
 <!--llegenda-->
 <div id=llegenda
 	 title=Llegenda
-	 style="display:none;font-size:12px;background-color:#eee;border:1px solid #ccc">
+	 style="display:none;"
+	 >
 	<table style="margin:0px;padding:0px">
 		<tr>
-			<td><span style=font-size:20px;color:lightblue>&#9632</span>	Tasca pendent
-			<td><span style=font-size:20px;color:#af0>&#9632</span>			Tasca en espera
-			<td><span style=font-size:20px;color:orange>&#9632</span>		Tasca programada
-			<td><span style=font-size:20px;color:red>&#9632</span>			Tasca amb data límit
-			<td><span style=font-size:20px;color:white>&#9632</span>		Projecte 
-			<td><span style=font-size:20px;color:yellow>&#9632</span>		Àrea actual
+			<td><span style="border:1px solid black;padding:0.3em;background:lightblue"	>Tasca pendent</span>
+			<td><span style="border:1px solid black;padding:0.3em;background:orange"		>Tasca programada</span>
+			<td><span style="border:1px solid black;padding:0.3em;background:red"		>Tasca amb data límit</span>
+			<td><span style="border:1px solid black;padding:0.3em;background:white"		>Projecte </span>
 	</table>
 </div>
 

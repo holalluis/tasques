@@ -3,6 +3,6 @@
 	<!--nom del servidor: si sóc jo dirà localhost-->
 	Servidor: <b><?php echo $_SERVER['SERVER_NAME']; ?></b>
 	|
-	<a href="mailto:lbosch@icra.cat?subject=Tasques app request">
+	<a href="mailto:lbosch@icra.cat">
 		Report a problem / Request new feature</a>
 </div>

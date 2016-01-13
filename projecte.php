@@ -8,7 +8,6 @@
 	$result=mysql_query($sql);
 	$row=mysql_fetch_array($result);
 	$area=$row['id_area'];
-	$en_espera=$row['en_espera'];
 ?>
 <!doctype html><html><head>
 	<meta charset=utf-8 />
@@ -171,17 +170,6 @@
 <!--opcions del projecte-->
 <table cellpadding=10 style=margin:1em>
 	<tr><th rowspan=3 style=background:#ccc>Opcions
-	<!--projecte en espera?-->
-	<th>
-		<div style=padding:1em>
-			<?php
-				if($en_espera) echo "<b style=background:#af0;padding:1em>Projecte pausat</b>";
-				else echo "<b style=background:yellow;padding:1em>Projecte actiu</b>";
-			?>
-			<button onclick="window.location='toggleEnEsperaProjecte.php?id=<?php echo $id?>'">
-				Canvia
-			</button>
-		</div>
 	<!--canvia AREA -->
 	<tr><th>
 		Àrea actual: 

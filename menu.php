@@ -11,13 +11,15 @@
 		echo " &#9474; ";
 	}
 ?>
-<div>
+<div style="padding:1em 0 0 0">
 	<?php 
-		creaLink("index.php",			"Tasques (".mysql_num_rows(mysql_query("SELECT 1 FROM tasques")).")");
-		creaLink("pla.php",				"Pla Setmanal (".mysql_num_rows(mysql_query("SELECT 1 FROM pla_setmanal")).")");
-		creaLink("deadlines.php",		"Dates Límit (".mysql_num_rows(mysql_query("SELECT 1 FROM deadlines")).")");
-		creaLink("periodiques.php",		"Tasques Periòdiques (".mysql_num_rows(mysql_query("SELECT 1 FROM periodiques")).")");
+		echo "&#9776; "; //"burger" symbol
+		creaLink("index.php",			"Tasques");
+		creaLink("pla.php",				"Pla setmanal");
+		creaLink("deadlines.php",		"Dates límit");
+		creaLink("periodiques.php",		"Tasques periòdiques");
 		creaLink("imprimibleMenu.php",	"Imprimir");
+		creaLink("historic.php",		"Historic");
 	?>
 </div>
 

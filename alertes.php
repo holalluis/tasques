@@ -1,4 +1,4 @@
-<!--mòdul alertes dins el PLA SETMANAL-->
+<!--mòdul dins pla.php-->
 <style>
 	#alertes td, #alertes th {
 		border:1px solid #ccc;
@@ -39,4 +39,3 @@
 			}
 		?>
 </table>
-

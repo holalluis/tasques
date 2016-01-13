@@ -60,10 +60,10 @@ function mostraArea(area)
 	//desressalta tots els botons que activen arees
 	var botons = document.getElementsByClassName('boto_area')
 	for(var i=0; i<botons.length; i++)
-		botons[i].style.backgroundColor=''
+		botons[i].classList.remove('actiu')
 
 	//ressalta el boto que activa l'area
-	document.getElementById('boto_area'+area).style.backgroundColor='yellow'
+	document.getElementById('boto_area'+area).classList.add('actiu')
 
 	//per acabar, selecciona el valor de l'area triada en el camp "nou projecte"
 	document.getElementById('area_select').value=area

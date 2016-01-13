@@ -4,49 +4,36 @@
 	//connecta
 	include 'connecta_mysql.php';
 
-	//troba tots els PROJECTES que no estan en espera
 	$sql="SELECT * FROM projectes ORDER BY id DESC";
 	$result=mysql_query($sql) or die(mysql_error());
 
-	//executa el bucle per cada projecte
+	//recorre els projectes
 	while($row=mysql_fetch_array($result))
 	{
 		$id			= $row['id'];
 		$area		= $row['id_area'];
 		$nom		= $row['nom'];
-		$en_espera  = $row['en_espera'];
 
 		//crea un nou <div> 
-		echo "<div class=projecte id=$id area=$area en_espera='$en_espera' style='display:none;box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);'>";
+		echo "<div class=projecte id=$id area=$area style='display:none;box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);'>";
 
 		//taula de tasques
 		echo "<table cellpadding=3 style='margin:0em;width:100%'>";
 
 		//primera fila: nom
-		echo "<tr><td colspan=3><a href='projecte.php?id=$id'>$nom</a> &verbar; ";
+		echo "<tr><td colspan=3><a href='projecte.php?id=$id'>$nom</a>";
 
-		//si esta en espera, marca-ho i segueix mostrant tasques
-		if($en_espera)
-		{
-			//si esta en espera no mostris totes les tasques
-			echo "<code style=color:#aaa>Pausat</code>
-				<button onclick=window.location='toggleEnEsperaProjecte.php?id=$id' title='Activar projecte'>&#9654;</button>
-			</table></div>";
-			continue;
-		}
-		else
-		//si no esta en espera, marca'l com a actiu i mostra el botó de pausa
-		{
-			echo "<code>Actiu</code>
-				<button onclick=window.location='toggleEnEsperaProjecte.php?id=$id' 
-					title='Pausar projecte'>
-					&#8545;
-				</button>";
-		}
-
-		//tasques del projecte 
+		//recorre les tasques
 		$sql="SELECT * FROM tasques WHERE id_projecte=$id ORDER BY id ASC";
 		$res=mysql_query($sql);
+
+		//si no hi ha tasques marca-ho en gris
+		if(mysql_num_rows($res)==0)
+		{
+			echo "<tr><td style='background:#ccc;font-size:10px;color:#666' colspan=2>No hi ha tasques";
+		}
+
+		//recorre les tasques
 		while($roww=mysql_fetch_array($res))
 		{
 			$acabada=$roww['acabada'];

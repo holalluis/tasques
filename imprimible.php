@@ -48,7 +48,6 @@
 	{
 		$id=$row['id'];
 		$nom=$row['nom'];
-		$en_espera=$row['en_espera'];
 
 		//nova fila?
 		if($projectes%5==0)echo "<tr>";
@@ -56,7 +55,7 @@
 		//nom projecte
 		echo "<td style=padding:0;width:10%><table border=1>";
 		echo "<tr><th style=background:lightblue>$nom"; 
-		if($en_espera)echo " | <b>Projecte pausat</b>";
+
 		//recorre tasques
 		$sql="SELECT * FROM tasques WHERE id_projecte=$id ORDER BY id ASC";
 		$res=mysql_query($sql);
