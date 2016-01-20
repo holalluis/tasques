@@ -10,7 +10,7 @@
 <!--menu--><?php include "menu.php"?>
 
 <!--titol, menú nou projecte i àrees-->
-<table style=margin:1em cellpadding=0><tr>
+<table cellpadding=0 style=margin:2px><tr>
 	<td>
 		<!--titol-->
 		<h2 style="cursor:pointer;margin-right:4em" onclick="window.location=window.location.pathname">
@@ -37,7 +37,7 @@
 		</form>
 	<td class=menu>
 		<!--arees-->
-		<span title="Una àrea és un conjunt de projectes">Àrees</span> 
+		<span title="Una àrea és un conjunt de projectes"> Àrees </span> 
 		<?php
 			$res=mysql_query("SELECT * FROM arees");
 			$n_arees=mysql_num_rows($res);
@@ -60,23 +60,28 @@
 				$i_area++;
 			}
 		?>
-		| <a href="editaArees.php">Afegir àrees</a>
-		| <a href=# onclick=llegenda()>Llegenda</a>
+		<!--editar arees-->
+		<a style="border:1px solid #ccc;padding:0.5em;border-radius:0.4em" href="editaArees.php">Configuració àrees</a>
 </table>
 
-<!--llegenda-->
+<!--legend-->
 <div id=llegenda title=Llegenda style=display:none>
-	<table style="margin:0px;padding:0px">
-		<tr>
-			<td><span style="border:1px solid black;padding:0.3em;background:white"		> Projecte 			   </span>
-			<td><span style="border:1px solid black;padding:0.3em;background:lightblue"	> Tasca				   </span>
-			<td><span style="border:1px solid black;padding:0.3em;background:orange"	> Tasca programada     </span>
-			<td><span style="border:1px solid black;padding:0.3em;background:#af0"		> Tasca en espera      </span>
-			<td><span style="border:1px solid black;padding:0.3em;background:red"		> Tasca amb data límit </span>
+	<style>
+		#llegenda span {border:1px solid #ccc;padding:0.3em}
+		#llegenda table {margin:0;padding:0;font-size:12px}
+	</style>
+	<table> <tr>
+			<th>Llegenda &emsp;&emsp;
+			<td><span style="background:white"		> Projecte 			   </span>
+			<td><span style="background:lightblue"	> Tasca				   </span>
+			<td><span style="background:orange"	> Tasca programada     </span>
+			<td><span style="background:#af0"		> Tasca en espera      </span>
+			<td><span style="background:red"		> Tasca amb data límit </span>
 	</table>
 </div>
 
 <!--tasques--><?php include 'taulaTasques.php'?>
+<!--legend--><div><a style="font-size:14px;border:1px solid;padding:0.5em;margin:0.5em" href=# onclick=llegenda()>Veure Llegenda</a></div>
 <!--fi pagina--><?php include 'footer.php'?>
 
 <!--ressalta visualment les tasques del pla setmanal i deadlines-->

@@ -1,4 +1,4 @@
-<div style="text-align:left;padding:2em">
+<div style="text-align:left;padding:1em">
 <!-- fragment dins la pagina index.php -->
 <?php
 	//connecta
@@ -15,7 +15,7 @@
 		$nom		= $row['nom'];
 
 		//crea un nou <div> 
-		echo "<div class=projecte id=$id area=$area style='display:none;box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);'>";
+		echo "<div class=projecte id=$id area=$area style='display:none;'>";
 
 		//taula de tasques
 		echo "<table cellpadding=3 style='margin:0em;width:100%'>";

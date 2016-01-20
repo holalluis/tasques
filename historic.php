@@ -15,7 +15,7 @@
 
 <!--tasques programades per aquesta setmana-->
 <table cellpadding=5>
-	<tr> <th>Tasca <th>Projecte <th>Àrea <th>Completada <th>Opcions
+	<tr> <th>Tasca <th>Projecte <th>Àrea <th>Data acabament<th>Opcions
 	<tr> <?php
 			//totes les tasques del pla setmanal amb tota la seva info associada
 			$res=mysql_query("SELECT * FROM acabades ORDER BY acabada DESC") or die(mysql_error());

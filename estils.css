@@ -1,32 +1,33 @@
 *{margin:0}
-body{font-family:Helvetica}
+body{font-family:Helvetica;overflow-y:scroll}
 h2,h4{margin:0.7em}
-hr{ display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+table{border-collapse:collapse} 
+td{border:1px solid white}
+div{padding:0.1em; margin:0.1em; }
+button{border:1px solid #666; border-radius:0.1em; }
+
 /*enllaços*/
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 a:visited{color:blue;}
-table{border-collapse:collapse} 
-td{border:1px solid #eee}
-div{ padding:0.1em; margin:0.1em; }
-button{ border:1px solid #666; border-radius:0.1em; }
 
 /*navbar superior*/
-td.menu{ font-size:12px; border:1px solid #fff; padding:1.8541em 3em; }
+td.menu{ font-size:12px; border:1px solid #fff; padding:1.8541em 2em; }
 
 /*BOTONS SELECCIONA AREA*/
 button.boto_area{
-	padding:0.5em;
+	background:#fafafa;
 	border:none;
-	border-top:1px solid #ccc;
 	border-bottom:1px solid #ccc;
 	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;
 	outline:none;
+	padding:0.5em;
 }
-button.boto_area:hover  { background:#e6e6e6}
+button.boto_area:hover{background:#e6e6e6}
 button.boto_area.esquerre{border-left:1px solid #ccc; border-radius:0.4em 0 0 0.4em;}
 button.boto_area.dreta{border-right:1px solid #ccc; border-radius:0 0.4em 0.4em 0;}
-button.boto_area.actiu { background-color:#ccc;box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05);}
+button.boto_area.actiu{background-color:#cacaca;box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05);}
 
 /*PROJECTES*/
 div.projecte{ 
@@ -40,6 +41,7 @@ div.projecte{
 	padding:0.4em;
 	vertical-align:top;
 	width:19%;
+	box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);
 }
 
 tr.tasca{ font-size:12px; background-color:lightblue; }

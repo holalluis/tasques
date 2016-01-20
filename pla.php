@@ -12,7 +12,7 @@
 		}
 		tr.tasca > td, tr.tasca>th{
 			background-color:orange;
-			border:1px solid #fff;
+			border:1px solid #ccc;
 		}
 		tr[acabada] > td, tr[acabada] > th{
 			background-color:#af0;
@@ -69,7 +69,7 @@
 			var avuis = document.getElementsByClassName('dia_'+avui);
 			for(i=0;i<avuis.length;i++)
 			{
-				avuis[i].style.border='1px solid #000';
+				avuis[i].style.border='1px solid #ccc';
 				avuis[i].style.backgroundColor='#f8fa58';
 				avuis[i].textContent+=" (AVUI)"
 			}

@@ -8,11 +8,10 @@
 		}
 		else 
 			echo "<a href='$url'>$contingut</a>";
-		echo " &#9474; ";
-		//echo " \ ";
+		echo " <span style=color:#aaa>&#9474;</span> ";
 	}
 ?>
-<div style="padding:1em 0 0 0">
+<div style="padding:1em 0 1em 0;margin:0;background:#fafafa;box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);">
 	<?php 
 		echo "&#9776; "; //"burger" symbol
 		creaLink("index.php",			"Tasques");
@@ -23,5 +22,3 @@
 		creaLink("historic.php",		"Historic");
 	?>
 </div>
-
-<hr>

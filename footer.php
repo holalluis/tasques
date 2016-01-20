@@ -1,5 +1,5 @@
 
-<div style=font-size:12px;margin:1em>
+<div style=font-size:12px;margin:2em>
 	<!--nom del servidor: si sóc jo dirà localhost-->
 	Servidor: <b><?php echo $_SERVER['SERVER_NAME']; ?></b>
 	|
