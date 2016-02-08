@@ -15,24 +15,24 @@ $res=mysql_query("
 					WHERE 	tasques.id=$id AND projectes.id=tasques.id_projecte AND projectes.id_area=arees.id
 				") or die(mysql_error());
 $row=mysql_fetch_assoc($res);
-$tasca	  = $row['tasca'];
+$tasca	  = mysql_real_escape_string($row['tasca']);
 $projecte = $row['projecte'];
 $area	  = $row['area'];
 
 //afegeix la tasca a "acabades"
-mysql_query("INSERT INTO acabades (tasca,projecte,area) VALUES ('$tasca','$projecte','$area')") or exit('error');
+mysql_query("INSERT INTO acabades (tasca,projecte,area) VALUES ('$tasca','$projecte','$area')") or exit(mysql_error());
 
 
 echo "Esborrant tasca...";
 
 //esborra si està en el pla setmanal
-mysql_query("DELETE FROM pla_setmanal WHERE id_tasca=$id") or exit('error');
+mysql_query("DELETE FROM pla_setmanal WHERE id_tasca=$id") or exit(mysql_error());
 
 //esborra si hi ha deadlines
-mysql_query("DELETE FROM deadlines WHERE id_tasca=$id") or exit('error');
+mysql_query("DELETE FROM deadlines WHERE id_tasca=$id") or exit(mysql_error());
 
 //esborra la tasca en si
-mysql_query("DELETE FROM tasques WHERE id=$id") or exit('error');
+mysql_query("DELETE FROM tasques WHERE id=$id") or exit(mysql_error());
 
 echo "ok";
 
