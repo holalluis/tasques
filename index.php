@@ -62,6 +62,9 @@
 		?>
 		<!--editar arees-->
 		<a style="border:1px solid #ccc;padding:0.5em;border-radius:0.4em" href="editaArees.php">Configuració àrees</a>
+	<td class=menu>
+		<!--show legend-->
+		<a style="font-size:14px;border:1px solid;padding:0.5em;border-radius:0.4em" href=# onclick=llegenda()>Veure Llegenda</a>
 </table>
 
 <!--legend-->
@@ -81,7 +84,6 @@
 </div>
 
 <!--tasques--><?php include 'taulaTasques.php'?>
-<!--legend--><div><a style="font-size:14px;border:1px solid;padding:0.5em;margin:0.5em" href=# onclick=llegenda()>Veure Llegenda</a></div>
 <!--fi pagina--><?php include 'footer.php'?>
 
 <!--ressalta visualment les tasques del pla setmanal i deadlines-->
