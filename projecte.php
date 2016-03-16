@@ -64,7 +64,7 @@
 <h2 onclick=editable(this)><?php echo $row['nom'] ?></h2>
 
 <!--tasques del projecte-->
-<table cellpadding=7 style="box-shadow:0 4px 3px -3px rgba(0,0,0,0.1);">
+<table cellpadding=7 style="margin:0 2em 0 2em;">
 	<tr> <th colspan=3>Tasques <th>Programar al Pla Setmanal <th>Data Límit
 	<?php
 		//demana a la base de dades totes les tasques del projecte
