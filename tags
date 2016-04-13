@@ -1,0 +1,309 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$.Widget	js/jquery-ui.js	/^$.Widget._childConstructors = [];$/;"	c
+$.Widget	js/jquery-ui.js	/^};$/;"	f
+$.Widget.defaultElement	js/jquery-ui.js	/^	widgetEventPrefix: "",$/;"	p
+$.Widget.options	js/jquery-ui.js	/^	defaultElement: "<div>",$/;"	p
+$.Widget.widgetEventPrefix	js/jquery-ui.js	/^	widgetName: "widget",$/;"	p
+$.Widget.widgetName	js/jquery-ui.js	/^$.Widget.prototype = {$/;"	p
+$.cleanData	js/jquery-ui.js	/^	_cleanData = $.cleanData;$/;"	f
+$.effects.effect.blind	js/jquery-ui.js	/^	rpositivemotion = \/up|left|vertical|horizontal\/;$/;"	f
+$.effects.effect.scale	js/jquery-ui.js	/^};$/;"	f
+$.effects.effect.size	js/jquery-ui.js	/^};$/;"	f
+$.expr.toLowerCase	js/jquery-ui.js	/^	}$/;"	f
+$.fn	js/jquery-ui.js	/^	var fullName = object.prototype.widgetFullName || name;$/;"	f
+$.fn.addBack	js/jquery-ui.js	/^if ( !$.fn.addBack ) {$/;"	f
+$.fn.datepicker	js/jquery-ui.js	/^}$/;"	f
+$.fn.position	js/jquery-ui.js	/^};$/;"	f
+$.position.getScrollInfo	js/jquery-ui.js	/^	},$/;"	m
+$.position.scrollbarWidth	js/jquery-ui.js	/^$.position = {$/;"	m
+$.ui.ddmanager.current	js/jquery-ui.js	/^$.ui.ddmanager = {$/;"	p
+$.ui.ddmanager.droppables	js/jquery-ui.js	/^	current: null,$/;"	p
+$.ui.intersect	js/jquery-ui.js	/^});$/;"	f
+$.ui.position.fit	js/jquery-ui.js	/^$.ui.position = {$/;"	p
+$.widget	js/jquery-ui.js	/^};$/;"	f
+$.widget.bridge	js/jquery-ui.js	/^};$/;"	f
+$.widget.extend	js/jquery-ui.js	/^};$/;"	f
+acabada	deadlines.php	/^			$acabada=		$row['acabada'];$/;"	v
+acabada	historic.php	/^				$acabada=  $row['acabada'];$/;"	v
+acabada	modificaTasca.php	/^$acabada=$_GET['acabada']; \/\/0 ò 1$/;"	v
+acabada	pla.php	/^				$acabada=	  $row['acabada'];$/;"	v
+acabada	projecte.php	/^			$acabada=$roww['acabada'];$/;"	v
+acabada	taulaTasques.php	/^			$acabada=$roww['acabada'];$/;"	v
+area	esborraTasca.php	/^$area	  = $row['area'];$/;"	v
+area	historic.php	/^				$area=	   $row['area'];$/;"	v
+area	imprimible.php	/^	$area=$_GET['area'];$/;"	v
+area	index.php	/^	$area=isset($_GET['area']) ? $_GET['area'] : current(mysql_fetch_array(mysql_query("SELECT MIN(id) FROM arees")));$/;"	v
+area	projecte.php	/^	$area=$row['id_area'];$/;"	v
+area	taulaTasques.php	/^		$area		= $row['id_area'];$/;"	v
+area_actual	projecte.php	/^				$area_actual = $row['id_area'];$/;"	v
+area_id	index.php	/^						$area_id=$row['id'];$/;"	v
+area_id	index.php	/^				$area_id=$row['id'];$/;"	v
+area_nom	index.php	/^						$area_nom=$row['nom'];$/;"	v
+area_nom	index.php	/^				$area_nom=$row['nom'];$/;"	v
+bindHover	js/jquery-ui.js	/^function bindHover(dpDiv) {$/;"	f
+buttons	js/jquery-ui.js	/^var sizeRelatedOptions = {$/;"	p
+cachedScrollbarWidth	js/jquery-ui.js	/^var cachedScrollbarWidth,$/;"	v
+calculaDiesDeadline	projecte.php	/^		function calculaDiesDeadline(id,deadline)$/;"	f
+cancelar.onclick	js/index.js	/^	cancelar.innerHTML="Cancelar";$/;"	f
+canviaArea	projecte.php	/^		function canviaArea()$/;"	f
+checked	pla.php	/^					$checked="false";$/;"	v
+checked	pla.php	/^					$checked=$_COOKIE["periodica$id"];$/;"	v
+color	imprimible.php	/^			$color = $roww['acabada'] ? "style=background:#af0" : "";$/;"	v
+color	periodiques.php	/^			$color="lightblue";$/;"	v
+color	pla.php	/^					$color="#af0";$/;"	v
+color	pla.php	/^					$color="lightblue";$/;"	v
+command	update.php	/^	$command='"C:\\Program Files (x86)\\Git\\bin"\\git pull';$/;"	v
+constructor	js/jquery-ui.js	/^	});$/;"	c
+creaLink	menu.php	/^	function creaLink($url,$contingut)$/;"	f
+da	pla.php	/^				$da=$dia;$/;"	v
+da	pla.php	/^			$da=0;$/;"	v
+deadline	alertes.php	/^				$deadline	 = $row['deadline'];$/;"	v
+deadline	deadlines.php	/^			$deadline=		$row['deadline'];$/;"	v
+deadline	novaDeadline.php	/^$deadline=$_GET['deadline'];$/;"	v
+des	pla.php	/^				$des=		  $row['descripcio'];$/;"	v
+descr	alertes.php	/^				$descr    	 = $row['descripcio'];$/;"	v
+descrip	projecte.php	/^			$descrip=$roww['descripcio'];$/;"	v
+descripcio	deadlines.php	/^			$descripcio=	$row['descripcio'];$/;"	v
+descripcio	novaTasca.php	/^$descripcio=mysql_real_escape_string($_GET['descripcio']);$/;"	v
+desprograma	projecte.php	/^		function desprograma(id)$/;"	f
+determineYear	js/jquery-ui.js	/^				thisYear = new Date().getFullYear();$/;"	f
+dia	novaTascaPlaSetmanal.php	/^$dia=$_GET['dia'];$/;"	v
+dia	pla.php	/^				$dia=		  $row['dia'];$/;"	v
+dia	pla.php	/^			$dia=date('w'); \/\/0:diumenge, 1:dilluns, 2:dimarts $/;"	v
+dia	projecte.php	/^					case 0: $dia="Dilluns"; break;$/;"	v
+dia	projecte.php	/^					case 1: $dia="Dimarts"; break;$/;"	v
+dia	projecte.php	/^					case 2: $dia="Dimecres"; break;$/;"	v
+dia	projecte.php	/^					case 3: $dia="Dijous"; break;$/;"	v
+dia	projecte.php	/^					case 4: $dia="Divendres"; break;$/;"	v
+dia	projecte.php	/^					case 5: $dia="Dissabte"; break;$/;"	v
+dia	projecte.php	/^					case 6: $dia="Diumenge"; break;$/;"	v
+dia_nom	pla.php	/^					case 0: $dia_nom="Dilluns";   break;$/;"	v
+dia_nom	pla.php	/^					case 1: $dia_nom="Dimarts";   break;$/;"	v
+dia_nom	pla.php	/^					case 2: $dia_nom="Dimecres";  break;$/;"	v
+dia_nom	pla.php	/^					case 3: $dia_nom="Dijous"; 	  break;$/;"	v
+dia_nom	pla.php	/^					case 4: $dia_nom="Divendres"; break;$/;"	v
+dia_nom	pla.php	/^					case 5: $dia_nom="Dissabte";  break;$/;"	v
+dia_nom	pla.php	/^					case 6: $dia_nom="Diumenge";  break;$/;"	v
+downAnim.opacity	js/jquery-ui.js	/^		downAnim = { opacity: 1 };$/;"	p
+editaNom	editaArees.php	/^		function editaNom(element,area)$/;"	f
+editable.esborraProjecte	js/projecte.js	/^function esborraProjecte()$/;"	f
+effects.effect.bounce	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.clip	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.drop	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.explode	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.explode.animComplete	js/jquery-ui.js	/^	function animComplete() {$/;"	f
+effects.effect.explode.childComplete	js/jquery-ui.js	/^	function childComplete() {$/;"	f
+effects.effect.fade	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.fold	js/jquery-ui.js	/^})( jQuery );$/;"	f
+effects.effect.highlight	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.puff	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.pulsate	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.shake	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.slide	js/jquery-ui.js	/^})(jQuery);$/;"	f
+effects.effect.transfer	js/jquery-ui.js	/^})(jQuery);$/;"	f
+enviaTascaAPlaSetmanal	projecte.php	/^		function enviaTascaAPlaSetmanal(tasca)$/;"	f
+es_al_pla_setmanal	projecte.php	/^			$es_al_pla_setmanal = mysql_num_rows(mysql_query("SELECT 1 FROM pla_setmanal WHERE id_tasca=$id_task"));$/;"	v
+es_deadline	projecte.php	/^			$es_deadline = mysql_num_rows(mysql_query("SELECT 1 FROM deadlines WHERE id_tasca=$id_task"));$/;"	v
+esborra	periodiques.php	/^		function esborra(id)$/;"	f
+esborraArea	editaArees.php	/^		function esborraArea(area)$/;"	f
+esborraDeadline	deadlines.php	/^		function esborraDeadline(id)$/;"	f
+esborraDelPlaSetmanal	pla.php	/^		function esborraDelPlaSetmanal(id)$/;"	f
+esborraTasca.modificaTasca	js/projecte.js	/^function modificaTasca(id,acabada,input)$/;"	f
+espai	pla.php	/^	function espai()$/;"	f
+espaiador	funcions.php	/^	function espaiador()$/;"	f
+estatTascaPeriodica	pla.php	/^		function estatTascaPeriodica(estat,id)$/;"	f
+extendRemove	js/jquery-ui.js	/^function extendRemove(target, props) {$/;"	f
+f	funcions.php	/^			case 0: $f="Dies Laborables";break;$/;"	v
+f	funcions.php	/^			case 1: $f="Cada Dilluns";break;$/;"	v
+f	funcions.php	/^			case 2: $f="Cada Dimarts";break;$/;"	v
+f	funcions.php	/^			case 3: $f="Cada Dimecres";break;$/;"	v
+f	funcions.php	/^			case 4: $f="Cada Dijous";break;$/;"	v
+f	funcions.php	/^			case 5: $f="Cada Divendres";break;$/;"	v
+f	funcions.php	/^			case 6: $f="Cada Dissabte";break;$/;"	v
+f	funcions.php	/^			case 7: $f="Cada Diumenge";break;$/;"	v
+f	funcions.php	/^			default: $f="error";break;$/;"	v
+fa	periodiques.php	/^			$fa=$freq;$/;"	v
+fa	periodiques.php	/^		$fa=0; \/\/freq anterior$/;"	v
+factor.from	js/jquery-ui.js	/^	factor = {$/;"	p
+falten	alertes.php	/^				$falten = (strtotime($deadline)-strtotime(date("Y\/m\/d")))\/(60*60*24);$/;"	v
+falten	deadlines.php	/^			$falten = (strtotime($deadline)-strtotime(date("Y\/m\/d")))\/(60*60*24);$/;"	v
+fila	imprimible.php	/^		$fila=0; \/\/comptador de files$/;"	v
+focusable	js/jquery-ui.js	/^function focusable( element, isTabIndexNotNaN ) {$/;"	f
+freq	funcions.php	/^	function freq($n)$/;"	f
+freq	novaTascaPeriodica.php	/^$freq=$_GET['freq'];$/;"	v
+freq	periodiques.php	/^			$freq=$row['freq'];$/;"	v
+freq	pla.php	/^				$freq=$row['freq'];$/;"	v
+geClass	js/index.js	/^function geClass(className){ 	return document.getElementsByClassName(className) }$/;"	f
+geId	js/index.js	/^function geId(id){ 		return document.getElementById(id) }$/;"	f
+geName	js/index.js	/^function geName(name){ 		return document.getElementsByName(name) }$/;"	f
+getDimensions	js/jquery-ui.js	/^function getDimensions( elem ) {$/;"	f
+getNextTabId	js/jquery-ui.js	/^function getNextTabId() {$/;"	f
+getOffsets	js/jquery-ui.js	/^function getOffsets( offsets, width, height ) {$/;"	f
+guarda	editaArees.php	/^		function guarda(area)$/;"	f
+height	js/jquery-ui.js	/^		buttons: true,$/;"	p
+i_area	index.php	/^			$i_area=1;$/;"	v
+id	canviaAreaProjecte.php	/^$id=$_GET['id_projecte'];$/;"	v
+id	canviaNomArea.php	/^$id=$_GET['id_area'];$/;"	v
+id	canviaNomProjecte.php	/^$id=$_GET['id_projecte'];$/;"	v
+id	esborraAcabada.php	/^$id=$_GET['id'];$/;"	v
+id	esborraArea.php	/^$id=$_GET['id'];$/;"	v
+id	esborraDeadline.php	/^$id=$_GET['id'];$/;"	v
+id	esborraDelPlaSetmanal.php	/^$id=$_GET['id'];$/;"	v
+id	esborraProjecte.php	/^$id=$_GET['id'];$/;"	v
+id	esborraTasca.php	/^$id=$_GET['id'];$/;"	v
+id	esborraTascaPeriodica.php	/^$id=$_GET['id'];$/;"	v
+id	historic.php	/^				$id=	   $row['id'];$/;"	v
+id	imprimible.php	/^			$id=$row['id'];$/;"	v
+id	imprimible.php	/^			$id=$roww['id'];$/;"	v
+id	imprimible.php	/^		$id=$row['id'];$/;"	v
+id	imprimibleMenu.php	/^			$id =$row['id'];$/;"	v
+id	modificaTasca.php	/^$id=$_GET['id'];$/;"	v
+id	mouTascaAlDiaAnterior.php	/^$id=$_GET['id'];$/;"	v
+id	mouTascaAlDiaSeguent.php	/^$id=$_GET['id'];$/;"	v
+id	periodiques.php	/^			$id=$row['id'];$/;"	v
+id	pla.php	/^				$id=		  $row['id'];$/;"	v
+id	pla.php	/^				$id=$row['id'];$/;"	v
+id	projecte.php	/^	$id=$_GET['id'];$/;"	v
+id	taulaTasques.php	/^		$id			= $row['id'];$/;"	v
+id_area	editaArees.php	/^			$id_area=$row['id'];$/;"	v
+id_area	esborraProjecte.php	/^$id_area=current(mysql_fetch_array(mysql_query("SELECT id_area FROM projectes WHERE id=$id")));$/;"	v
+id_area	nouProjecte.php	/^$id_area=$_GET['area'];$/;"	v
+id_area	pla.php	/^				$id_area=	  $row['id_area'];$/;"	v
+id_area	projecte.php	/^					$id_area = $row['id'];$/;"	v
+id_deadline	deadlines.php	/^			$id_deadline=	$row['id_deadline'];$/;"	v
+id_projecte	alertes.php	/^				$id_projecte = $row['id_projecte'];$/;"	v
+id_projecte	deadlines.php	/^			$id_projecte=	$row['id_projecte'];$/;"	v
+id_projecte	esborraArea.php	/^	$id_projecte = $row['id'];$/;"	v
+id_projecte	novaTasca.php	/^$id_projecte=$_GET['id_projecte'];$/;"	v
+id_tasca	alertes.php	/^				$id_tasca 	 = $row['id_tasca'];$/;"	v
+id_tasca	deadlines.php	/^			$id_tasca=		$row['id_tasca'];$/;"	v
+id_tasca	esborraArea.php	/^		$id_tasca = $roww['id'];$/;"	v
+id_tasca	esborraProjecte.php	/^	$id_tasca = $row['id'];$/;"	v
+id_tasca	novaDeadline.php	/^$id_tasca=$_GET['id_tasca'];$/;"	v
+id_tasca	novaTascaPlaSetmanal.php	/^$id_tasca=$_GET['id_tasca'];$/;"	v
+id_tasca	pla.php	/^				$id_tasca=	  $row['id_tasca'];$/;"	v
+id_tasca	projecte.php	/^		$id_tasca=$row['id_tasca'];$/;"	v
+id_task	projecte.php	/^			$id_task=$roww['id'];$/;"	v
+id_task	taulaTasques.php	/^			$id_task=$roww['id'];$/;"	v
+init	pla.php	/^		function init()$/;"	f
+isLocal	js/jquery-ui.js	/^function isLocal( anchor ) {$/;"	f
+isNumber	js/jquery-ui.js	/^function isNumber(value) {$/;"	f
+m.width	js/jquery-ui.js	/^			m[i].proportions = { width: m[i].element[0].offsetWidth, height: m[i].element[0].offsetHeight };$/;"	p
+maxHeight	js/jquery-ui.js	/^		height: true,$/;"	p
+maxHeight	js/jquery-ui.js	/^	resizableRelatedOptions = {$/;"	p
+maxWidth	js/jquery-ui.js	/^		maxHeight: true,$/;"	p
+minHeight	js/jquery-ui.js	/^		maxWidth: true,$/;"	p
+minWidth	js/jquery-ui.js	/^		minHeight: true,$/;"	p
+modificaTasca	deadlines.php	/^		function modificaTasca(id,acabada,input)$/;"	f
+modificaTasca	pla.php	/^		function modificaTasca(id,acabada,input)$/;"	f
+mostraArea.modificaTasca	js/index.js	/^function modificaTasca(id,acabada,input)$/;"	f
+mouAlDiaAnterior	pla.php	/^		function mouAlDiaAnterior(id)$/;"	f
+mouAlDiaSeguent	pla.php	/^		function mouAlDiaSeguent(id)$/;"	f
+n_arees	index.php	/^			$n_arees=mysql_num_rows($res);$/;"	v
+nom	alertes.php	/^				$nom		 = $row['nom'];$/;"	v
+nom	canviaNomProjecte.php	/^$nom=mysql_real_escape_string($_GET['nouNom']);$/;"	v
+nom	imprimible.php	/^		$nom=$row['nom'];$/;"	v
+nom	imprimibleMenu.php	/^			$nom=$row['nom'];$/;"	v
+nom	nouProjecte.php	/^$nom=mysql_real_escape_string($_GET['nom']);$/;"	v
+nom	novaArea.php	/^$nom=mysql_real_escape_string($_GET['nom']);$/;"	v
+nom	novaTascaPeriodica.php	/^$nom=mysql_real_escape_string($_GET['nom']);$/;"	v
+nom	periodiques.php	/^			$nom=$row['nom'];$/;"	v
+nom	pla.php	/^				$nom=$row['nom'];$/;"	v
+nom	taulaTasques.php	/^		$nom		= $row['nom'];$/;"	v
+nomArea	pla.php	/^				$nomArea=	  $row['nom_area'];$/;"	v
+nomProjecte	pla.php	/^				$nomProjecte= $row['nom_projecte'];$/;"	v
+nom_area	editaArees.php	/^			$nom_area=$row['nom'];$/;"	v
+nom_area	projecte.php	/^					$nom_area = $row['nom'];$/;"	v
+nom_projecte	deadlines.php	/^			$nom_projecte=	$row['nom_projecte'];$/;"	v
+nou	nouProjecte.php	/^$nou=$row['MAX(id)'];$/;"	v
+nouNom	canviaNomArea.php	/^$nouNom=mysql_real_escape_string($_GET['nouNom']);$/;"	v
+novaArea	canviaAreaProjecte.php	/^$novaArea=$_GET['novaArea'];$/;"	v
+novaArea	editaArees.php	/^		function novaArea()$/;"	f
+novaDeadline	projecte.php	/^		function novaDeadline(tasca)$/;"	f
+options.to.height	js/jquery-ui.js	/^	options.to = {$/;"	p
+original.height	js/jquery-ui.js	/^	original = {$/;"	p
+parseCss	js/jquery-ui.js	/^function parseCss( element, property ) {$/;"	f
+pro	pla.php	/^				$pro=		  $row['id_projecte'];$/;"	v
+programa.enviaTascaAPlaSetmanal	js/index.js	/^function enviaTascaAPlaSetmanal(id,dia)$/;"	f
+programa.opcions.Dijous	js/index.js	/^		Dimecres:2,$/;"	p
+programa.opcions.Dilluns	js/index.js	/^	var opcions = {$/;"	p
+programa.opcions.Dimarts	js/index.js	/^		Dilluns:0,$/;"	p
+programa.opcions.Dimecres	js/index.js	/^		Dimarts:1,$/;"	p
+programa.opcions.Dissabte	js/index.js	/^		Divendres:4,$/;"	p
+programa.opcions.Diumenge	js/index.js	/^		Dissabte:5,$/;"	p
+programa.opcions.Divendres	js/index.js	/^		Dijous:3,$/;"	p
+programa.tascaDeadline	js/index.js	/^function tascaDeadline(id,deadline)$/;"	f
+programa.tascaProgramada	js/index.js	/^function tascaProgramada(id)$/;"	f
+projecte	esborraTasca.php	/^$projecte = $row['projecte'];$/;"	v
+projecte	historic.php	/^				$projecte= $row['projecte'];$/;"	v
+projectes	imprimible.php	/^	$projectes=0;$/;"	v
+res	alertes.php	/^		$res=mysql_query($sql) or die("error");$/;"	v
+res	editaArees.php	/^		$res=mysql_query("SELECT * FROM arees");$/;"	v
+res	esborraArea.php	/^$res=mysql_query("SELECT id FROM projectes WHERE id_area=$id");$/;"	v
+res	esborraTasca.php	/^$res=mysql_query("	$/;"	v
+res	historic.php	/^			$res=mysql_query("SELECT * FROM acabades ORDER BY acabada DESC") or die(mysql_error());$/;"	v
+res	imprimible.php	/^		$res=mysql_query($sql) or die('error');$/;"	v
+res	imprimible.php	/^		$res=mysql_query($sql);$/;"	v
+res	imprimibleMenu.php	/^		$res=mysql_query("SELECT * FROM arees");$/;"	v
+res	index.php	/^					$res=mysql_query("SELECT * FROM arees");$/;"	v
+res	index.php	/^			$res=mysql_query("SELECT * FROM arees");$/;"	v
+res	index.php	/^	$res=mysql_query("SELECT id_tasca FROM pla_setmanal");$/;"	v
+res	index.php	/^	$res=mysql_query("SELECT id_tasca,deadline FROM deadlines");$/;"	v
+res	pla.php	/^			$res=mysql_query("	SELECT $/;"	v
+res	pla.php	/^			$res=mysql_query("SELECT * FROM periodiques WHERE freq=$dia OR freq=0 ORDER BY freq ASC");$/;"	v
+res	pla.php	/^		$res=mysql_query("	$/;"	v
+res	projecte.php	/^				$res=mysql_query("SELECT * FROM arees");$/;"	v
+res	projecte.php	/^		$res=mysql_query($sql);$/;"	v
+res	projecte.php	/^	$res=mysql_query("	SELECT id_tasca, id_projecte$/;"	v
+res	projecte.php	/^	$res=mysql_query("SELECT id_tasca,deadline FROM deadlines");$/;"	v
+res	taulaTasques.php	/^		$res=mysql_query($sql);$/;"	v
+ress	esborraArea.php	/^	$ress=mysql_query("SELECT id FROM tasques WHERE id_projecte=$id_projecte");$/;"	v
+ress	projecte.php	/^				$ress=mysql_query("SELECT dia FROM pla_setmanal WHERE id_tasca=$id_task");$/;"	v
+ressaltaDiaActual	pla.php	/^		function ressaltaDiaActual()$/;"	f
+result	deadlines.php	/^		$result = mysql_query($sql);$/;"	v
+result	esborraProjecte.php	/^$result = mysql_query("SELECT id FROM tasques WHERE id_projecte=$id") or exit('error');$/;"	v
+result	imprimible.php	/^	$result=mysql_query($sql);$/;"	v
+result	nouProjecte.php	/^$result=mysql_query($sql) or exit('erroooor');$/;"	v
+result	periodiques.php	/^		$result=mysql_query("SELECT * FROM periodiques ORDER BY freq ASC");$/;"	v
+result	projecte.php	/^	$result=mysql_query($sql);$/;"	v
+result	taulaTasques.php	/^	$result=mysql_query($sql) or die(mysql_error());$/;"	v
+result	update.php	/^	$result=exec($command);$/;"	v
+row	esborraTasca.php	/^$row=mysql_fetch_assoc($res);$/;"	v
+row	nouProjecte.php	/^$row=mysql_fetch_array($result);$/;"	v
+row	projecte.php	/^				$row=mysql_fetch_array($ress);$/;"	v
+row	projecte.php	/^	$row=mysql_fetch_array($result);$/;"	v
+sql	alertes.php	/^		$sql="	SELECT * $/;"	v
+sql	deadlines.php	/^		$sql="SELECT $/;"	v
+sql	imprimible.php	/^		$sql="	SELECT tasques.id $/;"	v
+sql	imprimible.php	/^		$sql="SELECT * FROM tasques WHERE id_projecte=$id ORDER BY id ASC";$/;"	v
+sql	imprimible.php	/^	$sql="SELECT * FROM projectes WHERE id_area=$area ORDER BY id DESC";$/;"	v
+sql	nouProjecte.php	/^$sql ="INSERT INTO projectes (id,nom,id_area) ";$/;"	v
+sql	nouProjecte.php	/^$sql="SELECT MAX(id) FROM projectes";$/;"	v
+sql	novaArea.php	/^$sql ="INSERT INTO arees (id,nom) VALUES (NULL,'$nom') ";$/;"	v
+sql	novaDeadline.php	/^$sql ="INSERT INTO deadlines 	(id  , id_tasca,  deadline) $/;"	v
+sql	novaTasca.php	/^$sql ="INSERT INTO tasques (id,id_projecte,descripcio) ";$/;"	v
+sql	novaTascaPeriodica.php	/^$sql ="INSERT INTO periodiques (nom,freq) VALUES ('$nom',$freq)";$/;"	v
+sql	novaTascaPlaSetmanal.php	/^$sql ="INSERT INTO pla_setmanal (id_tasca,dia) ";$/;"	v
+sql	projecte.php	/^		$sql="SELECT * FROM tasques WHERE id_projecte=$id";$/;"	v
+sql	projecte.php	/^	$sql="SELECT * FROM projectes WHERE id=$id";$/;"	v
+sql	taulaTasques.php	/^		$sql="SELECT * FROM tasques WHERE id_projecte=$id ORDER BY id ASC";$/;"	v
+sql	taulaTasques.php	/^	$sql="SELECT * FROM projectes ORDER BY id DESC";$/;"	v
+tasca	esborraTasca.php	/^$tasca	  = mysql_real_escape_string($row['tasca']);$/;"	v
+tasca	historic.php	/^				$tasca=	   $row['tasca'];$/;"	v
+tascaDeadline	pla.php	/^	function tascaDeadline(id)$/;"	f
+testElementStyle.background	js/jquery-ui.js	/^		margin: 0,$/;"	p
+testElementStyle.border	js/jquery-ui.js	/^		height: 0,$/;"	p
+testElementStyle.height	js/jquery-ui.js	/^		width: 0,$/;"	p
+testElementStyle.margin	js/jquery-ui.js	/^		border: 0,$/;"	p
+testElementStyle.visibility	js/jquery-ui.js	/^	testElementStyle = {$/;"	p
+testElementStyle.width	js/jquery-ui.js	/^		visibility: "hidden",$/;"	p
+upAnim.opacity	js/jquery-ui.js	/^		upAnim = { opacity: 0 };$/;"	p
+url_seguent	novaTasca.php	/^$url_seguent=$_GET['url_seguent'];$/;"	v
+visible	js/jquery-ui.js	/^function visible( element ) {$/;"	f
+width	js/jquery-ui.js	/^		minWidth: true,$/;"	p
+y	js/jquery-ui.js	/^		factor = {$/;"	p

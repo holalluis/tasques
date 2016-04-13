@@ -9,13 +9,61 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
 /*
  * Funcions
  */
+function programa(id,ev)
+{
+	//fes apareixer un menu per seleccionar un dia
+	var div=document.createElement('div');
+	document.body.appendChild(div);
+	div.innerHTML="<span style=color:black>Programa per:</span>";
+	div.className="popup";
+	div.style.left=ev.pageX+"px";
+	div.style.top=ev.pageY+"px";
+
+	//Opcions: dl,dm,dx,dj,dv
+	var opcions = {
+		Dilluns:0,
+		Dimarts:1,
+		Dimecres:2,
+		Dijous:3,
+		Divendres:4,
+		Dissabte:5,
+		Diumenge:6,
+	}
+
+	for(var dia in opcions)
+	{
+		var op = document.createElement('div'); 
+		div.appendChild(op);
+		op.className="dia"
+		op.innerHTML="- "+dia;
+		op.setAttribute('onclick','enviaTascaAPlaSetmanal('+id+','+opcions[dia]+')');
+	}
+
+	var cancelar = document.createElement('button')
+	div.appendChild(cancelar);
+	cancelar.innerHTML="Cancelar";
+	cancelar.onclick=function(){div.style.display='none'}
+
+}
+
+function enviaTascaAPlaSetmanal(id,dia)
+{
+	var sol=new XMLHttpRequest();
+	sol.open('GET','novaTascaPlaSetmanal.php?id_tasca='+id+'&dia='+dia,false);
+	sol.send();
+	window.location.reload();
+}
 
 function tascaProgramada(id)
 //pinta de taronja la tasca id per marcar que està al pla setmanal
 {
 	if(!document.getElementById('tasca'+id))return
+	var tr=document.getElementById('tasca'+id);
+	tr.style.backgroundColor='orange';
 
-	document.getElementById('tasca'+id).style.backgroundColor='orange'
+	//remou comportament per programar al pla setmanal
+	var td = tr.childNodes[0];
+	td.setAttribute('onclick',"if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}");
 }
 
 function tascaDeadline(id,deadline)

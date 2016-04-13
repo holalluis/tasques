@@ -34,7 +34,7 @@
 			var dl = document.getElementById('deadline_'+tasca).value;
 			if(dl=='')
 			{
-				alert('Data limit buida'); return
+				alert('Data limit buida'); return;
 			}
 			//nova solicitud per crear una nova deadline
 			var sol = new XMLHttpRequest()
@@ -42,11 +42,13 @@
 			sol.send()
 			window.location='deadlines.php'
 		}
+
 		function canviaArea()
 		{
 			var novaArea = document.getElementById('selectArea').value;
 			window.location="canviaAreaProjecte.php?novaArea="+novaArea+"&id_projecte="+id;
 		}
+
 		function enviaTascaAPlaSetmanal(tasca)
 		{
 			var dia = document.getElementById('select_dia_pla_setmanal_tasca'+tasca).value;
@@ -54,6 +56,18 @@
 			sol.open('GET','novaTascaPlaSetmanal.php?id_tasca='+tasca+'&dia='+dia,false)
 			sol.send()
 			window.location.reload()
+		}
+
+		function calculaDiesDeadline(id,deadline)
+		//posa un quadrat vermell a la tasca per marcar que té deadline
+		{
+			if(!document.getElementById('tasca'+id)) return
+
+			//calcula els dies
+			var dies = Math.ceil(parseInt(new Date(deadline) - new Date())/1000/60/60/24)
+
+			//pinta els dies de vermell 
+			document.getElementById('tasca'+id).childNodes[0].innerHTML+=" (<b style=color:red>"+dies+" dies</b>)"
 		}
 	</script>
 	<script src="js/projecte.js"></script>
@@ -223,6 +237,13 @@
 	{
 		$id_tasca=$row['id_tasca'];
 		echo "document.getElementById('tasca'+$id_tasca).style.backgroundColor='orange';\n";
+	}
+
+	//TASQUES QUE TENEN DATA LIMIT 
+	$res=mysql_query("SELECT id_tasca,deadline FROM deadlines");
+	while($row=mysql_fetch_array($res))
+	{
+		echo "calculaDiesDeadline(".$row['id_tasca'].",'".$row['deadline']."');\n";
 	}
 ?>
 </script>

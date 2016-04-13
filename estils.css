@@ -11,6 +11,18 @@ a{text-decoration:none}
 a:hover{text-decoration:underline}
 a:visited{color:blue;}
 
+/*popups*/
+div.popup{
+	border:2px solid #ccc;
+	background:#fafafa;
+	color:#666;
+	position:absolute;
+	padding:0.5em;
+}
+
+div.popup div.dia {cursor:pointer;border-radius:0.5em}
+div.popup div.dia:hover {background:orange;color:black}
+
 /*navbar superior*/
 td.menu{ font-size:12px; border:1px solid #fff; padding:1.8541em 2em; }
 

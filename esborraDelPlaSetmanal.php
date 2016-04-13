@@ -18,6 +18,6 @@ mysql_query("DELETE FROM pla_setmanal WHERE id_tasca=$id") 	or exit('error');
 echo "ok";
 
 //torna enrere
-header("location: pla.php");
+header("location: ".$_SERVER['HTTP_REFERER']);
 
 ?>
