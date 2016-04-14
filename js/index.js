@@ -11,39 +11,82 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
  */
 function programa(id,ev)
 {
-	//fes apareixer un menu per seleccionar un dia
-	var div=document.createElement('div');
-	document.body.appendChild(div);
-	div.innerHTML="<span style=color:black>Programa per:</span>";
-	div.className="popup";
-	div.style.left=ev.pageX+"px";
-	div.style.top=ev.pageY+"px";
+	var tr=document.getElementById('tasca'+id);
 
-	//Opcions: dl,dm,dx,dj,dv
-	var opcions = {
-		Dilluns:0,
-		Dimarts:1,
-		Dimecres:2,
-		Dijous:3,
-		Divendres:4,
-		Dissabte:5,
-		Diumenge:6,
-	}
+	var sched = tr.getAttribute('sched')
+	var deadl = tr.getAttribute('deadl')
 
-	for(var dia in opcions)
+	//si ja té deadline i schedule, para
+	if(sched && deadl) return 
+
+	//fes apareixer un menu per seleccionar un dia o posar deadline
+	var popup=document.createElement('div');
+	document.body.appendChild(popup);
+	popup.className="popup";
+	popup.style.left=ev.pageX+"px";
+	popup.style.top=ev.pageY+"px";
+
+	//PLA SETMANAL
+	if(!sched)
 	{
-		var op = document.createElement('div'); 
-		div.appendChild(op);
-		op.className="dia"
-		op.innerHTML="- "+dia;
-		op.setAttribute('onclick','enviaTascaAPlaSetmanal('+id+','+opcions[dia]+')');
+		var div=document.createElement('div');
+		popup.appendChild(div);
+		if(!deadl) div.style.borderRight="1px solid #ddd"
+		div.style.paddingRight="10px"
+		div.className="inline";
+		div.innerHTML="<span style=color:black>Programa:</span>";
+		var opcions = {
+			Dilluns:0,
+			Dimarts:1,
+			Dimecres:2,
+			Dijous:3,
+			Divendres:4,
+			Dissabte:5,
+			Diumenge:6,
+		}
+		var avui = (new Date()).getDay()-1;
+		for(var dia in opcions)
+		{
+			var op = document.createElement('div'); 
+			div.appendChild(op);
+			op.className="dia"
+			if(opcions[dia]==avui)
+				op.innerHTML="<b>- "+dia+"</b>";
+			else
+				op.innerHTML="- "+dia;
+			op.setAttribute('onclick','enviaTascaAPlaSetmanal('+id+','+opcions[dia]+')');
+		}
 	}
 
-	var cancelar = document.createElement('button')
-	div.appendChild(cancelar);
-	cancelar.innerHTML="Cancelar";
-	cancelar.onclick=function(){div.style.display='none'}
+	//DEADLINE
+	if(!deadl)
+	{
+		var divDL=document.createElement('div');
+		popup.appendChild(divDL);
+		divDL.className='inline';
+		divDL.innerHTML="<span style=color:black>Data límit:</span>"
+		var input = document.createElement('input');
+		divDL.appendChild(input);
+		input.style.display='block'
+		input.type='date'
+		input.onchange=function()
+		{
+			var sol = new XMLHttpRequest();
+			sol.open('GET','novaDeadline.php?id_tasca='+id+'&deadline='+input.value,false)
+			sol.send()
+			window.location.reload();
+		}
+	}
 
+	//BOTO CANCELAR
+		var cancelarContainer = document.createElement('div')
+		popup.appendChild(cancelarContainer);
+		cancelarContainer.style.marginTop="0.5em";
+		cancelarContainer.style.textAlign="center";
+		var cancelar = document.createElement('button')
+		cancelarContainer.appendChild(cancelar);
+		cancelar.innerHTML="Cancelar";
+		cancelar.onclick=function(){popup.style.display='none'}
 }
 
 function enviaTascaAPlaSetmanal(id,dia)
@@ -54,27 +97,39 @@ function enviaTascaAPlaSetmanal(id,dia)
 	window.location.reload();
 }
 
-function tascaProgramada(id)
+function tascaProgramada(id,dia)
 //pinta de taronja la tasca id per marcar que està al pla setmanal
 {
 	if(!document.getElementById('tasca'+id))return
-	var tr=document.getElementById('tasca'+id);
-	tr.style.backgroundColor='orange';
 
-	//remou comportament per programar al pla setmanal
+	//element
+	var tr=document.getElementById('tasca'+id);
+	tr.setAttribute('sched',true)
+
+	//"dia" es un numero de 0 a 6
+	dies=["Dl","Dm","Dx","Dj","Dv","Ds","Dg"];
+
+	//posa indicador
 	var td = tr.childNodes[0];
-	td.setAttribute('onclick',"if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}");
+	td.innerHTML+=" <b title='Desprogramar' onclick=\"event.stopPropagation();if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}\" style='cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:orange'> "+dies[dia]+"</b>";
 }
 
-function tascaDeadline(id,deadline)
+function tascaDeadline(id,deadline,id_dl)
 //posa un quadrat vermell a la tasca per marcar que té deadline
 {
 	if(!document.getElementById('tasca'+id)) return
 
+	//element
+	var tr=document.getElementById('tasca'+id)
+	tr.setAttribute('deadl',true)
+
 	//calcula els dies
 	var dies = Math.ceil(parseInt(new Date(deadline) - new Date())/1000/60/60/24)
-	//pinta els dies de vermell 
-	document.getElementById('tasca'+id).childNodes[0].innerHTML+=" (<b style=color:red>"+dies+" dies</b>)"
+	var tamany = Math.max((25/Math.max(dies,1)),12)+"px";
+
+	//posa indicador
+	var td=tr.childNodes[0]
+	td.innerHTML+=" <b onclick=\"event.stopPropagation();if(confirm('Esborrar data límit?')){window.location='esborraDeadline.php?id="+id_dl+"'}\" style='font-size:"+tamany+";cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:#f78181'> "+dies+" dies</b>";
 }
 
 function llegenda()

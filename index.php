@@ -77,9 +77,9 @@
 			<th>Llegenda &emsp;&emsp;
 			<td><span style="background:white"		> Projecte 			   </span>
 			<td><span style="background:lightblue"	> Tasca				   </span>
-			<td><span style="background:orange"	> Tasca programada     </span>
-			<td><span style="background:#af0"		> Tasca en espera      </span>
-			<td><span style="background:red"		> Tasca amb data límit </span>
+			<td><span style="background:#af0"		> En espera      </span>
+			<td><span style="background:orange;border-radius:0.3em;font-weight:bold"	    > Tasca programada     </span>
+			<td><span style="background:#f78181;border-radius:0.3em;font-weight:bold"	> Data límit </span>
 	</table>
 </div>
 
@@ -90,17 +90,17 @@
 <script>
 <?php
 	//TASQUES QUE SON DINS DEL PLA SETMANAL
-	$res=mysql_query("SELECT id_tasca FROM pla_setmanal");
+	$res=mysql_query("SELECT * FROM pla_setmanal");
 	while($row=mysql_fetch_array($res))
 	{
-		echo "tascaProgramada(".$row['id_tasca'].");\n";
+		echo "tascaProgramada(".$row['id_tasca'].",".$row['dia'].");\n";
 	}
 
 	//TASQUES QUE TENEN DATA LIMIT 
-	$res=mysql_query("SELECT id_tasca,deadline FROM deadlines");
+	$res=mysql_query("SELECT id,id_tasca,deadline FROM deadlines");
 	while($row=mysql_fetch_array($res))
 	{
-		echo "tascaDeadline(".$row['id_tasca'].",'".$row['deadline']."');\n";
+		echo "tascaDeadline(".$row['id_tasca'].",'".$row['deadline']."',".$row['id'].");\n";
 	}
 
 	/* Processa arguments GET "ressalta" i "area" */

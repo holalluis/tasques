@@ -44,7 +44,7 @@
 			else 			echo "<tr class=tasca id=tasca$id_task >";
 
 			//descripcio
-			echo "<td onclick=programa($id_task,event) style='cursor:pointer'>";
+			echo "<td title='Programar' onclick=programa($id_task,event) style='cursor:pointer'>";
 			echo $roww['descripcio'];
 
 			//checkbox per tasca acabada

@@ -18,6 +18,6 @@ mysql_query("DELETE FROM deadlines WHERE id=$id") 	or exit('error');
 echo "ok";
 
 //torna enrere
-header("location: deadlines.php");
+header("location: ".$_SERVER['HTTP_REFERER']);
 
 ?>
