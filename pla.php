@@ -262,7 +262,7 @@
 
 				echo "<tr style=background-color:$color id=periodica$id>";
 				echo "<td>$nom";
-				echo "<td>".freq($freq);
+				echo "<td style=color:#666>".freq($freq);
 
 				echo "<td align=center>";
 				if($checked=="true")
