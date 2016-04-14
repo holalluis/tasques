@@ -6,8 +6,8 @@
 	<title>Tasques periòdiques</title>
 	<link rel=stylesheet href='estils.css'>
 	<style>
-		th,td{border:1px solid #ccc;font-size:12px}
-		td{border:1px solid #fff}
+		th{border:1px solid #ccc;font-size:12px}
+		td{font-size:12px}
 	</style>
 	<script>
 		function esborra(id)
@@ -43,7 +43,7 @@
 
 			echo "<tr style=background-color:$color;>";
 			echo "<td>$nom";
-			echo "<td>".freq($freq);
+			echo "<td style=color:#666>".freq($freq);
 			echo "<td align=center><button onclick=esborra($id)>Esborra</button>";
 			$fa=$freq;
 		}

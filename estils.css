@@ -27,6 +27,18 @@ div.popup
 	box-shadow: 0 4px 3px -3px rgba(0,0,0,0.1);
 }
 
+/* boto esborra tasca click llarg */
+button[id^="boto_esborraTasca"]
+{
+	background-color:#e50;
+	font-size:10px;
+}
+button[id^="boto_esborraTasca"]:hover
+{
+	transition:all 5s;
+	background:white;
+}
+
 div.popup div.dia {cursor:pointer;border-radius:0.5em}
 div.popup div.dia:hover {background:orange;color:black}
 

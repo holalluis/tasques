@@ -61,9 +61,11 @@
 			//botó esborrar
 			echo "<td align=center width=1> 
 					<button 
+						id=boto_esborraTasca$id_task
 						onclick=esborraTasca($id_task)
-						style='background-color:#e50;font-size:10px' >
-						Esborra</button>";
+						onmouseover=clickLlarg($id_task)
+						onmouseout=stopClickLlarg($id_task)
+						>Esborra</button>";
 		}
 		//formulari nova tasca
 		echo "<tr><td colspan=1>

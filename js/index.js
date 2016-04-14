@@ -6,6 +6,28 @@ function geId(id){ 		return document.getElementById(id) }
 function geName(name){ 		return document.getElementsByName(name) }
 function geClass(className){ 	return document.getElementsByClassName(className) }
 
+/** Variables pel click llarg (esborra tasca afegint a historic) */
+
+	var sto_handle;
+
+	function clickLlarg(id_task)
+	{
+		sto_handle = setTimeout(function(){
+			var boto = document.querySelector('#boto_esborraTasca'+id_task);
+			boto.innerHTML="Esborra <br>[sense historic]"
+			boto.setAttribute('onclick',"esborraTasca("+id_task+",true)");
+		},1500);
+	}
+
+	function stopClickLlarg(id_task)
+	{
+		clearTimeout(sto_handle)
+		var boto = document.querySelector('#boto_esborraTasca'+id_task);
+		boto.innerHTML="Esborra"
+		boto.setAttribute('onclick',"esborraTasca("+id_task+")");
+	}
+/***/ 
+
 /*
  * Funcions
  */
@@ -203,11 +225,20 @@ function ressalta_off(id)
 	geId(id).style.backgroundColor=''
 }
 
-function esborraTasca(tasca)
+function esborraTasca(tasca,no_historic)
 //MySQL: esborra una tasca de la base de dades
 {
+	no_historic=no_historic||false;
+
 	var sol = new XMLHttpRequest()
-	sol.open('GET',"esborraTasca.php?id="+tasca,false)
+
+	if(no_historic)
+		sol.open('GET',"esborraTasca.php?id="+tasca+"&no_historic=1",false)
+	else
+		sol.open('GET',"esborraTasca.php?id="+tasca,false)
+
 	sol.send()
+
+	//amaga tasca
 	document.getElementById('tasca'+tasca).style.display='none'
 }
