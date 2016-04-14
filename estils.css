@@ -1,5 +1,5 @@
 *{margin:0}
-body{font-family:Helvetica;overflow-y:scroll}
+body{height:100%;font-family:Helvetica;overflow-y:scroll}
 h2,h4{margin:0.7em}
 table{border-collapse:collapse} 
 td{border:1px solid white}
@@ -64,4 +64,6 @@ div.projecte{
 }
 
 tr.tasca{ font-size:12px; background-color:lightblue; }
+tr.tasca:hover {background:red}
 tr[acabada] > td{ background-color:#af0; }
+

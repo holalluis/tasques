@@ -34,7 +34,7 @@ function programa(id,ev)
 		if(!deadl) div.style.borderRight="1px solid #ddd"
 		div.style.paddingRight="10px"
 		div.className="inline";
-		div.innerHTML="<span style=color:black>Programa:</span>";
+		div.innerHTML="<span style=color:black>Ho faré:</span>";
 		var opcions = {
 			Dilluns:0,
 			Dimarts:1,
@@ -107,7 +107,7 @@ function tascaProgramada(id,dia)
 	tr.setAttribute('sched',true)
 
 	//"dia" es un numero de 0 a 6
-	dies=["Dl","Dm","Dx","Dj","Dv","Ds","Dg"];
+	dies=["Dll","Dm","Dx","Dj","Dv","Ds","Dg"];
 
 	//posa indicador
 	var td = tr.childNodes[0];
@@ -125,11 +125,11 @@ function tascaDeadline(id,deadline,id_dl)
 
 	//calcula els dies
 	var dies = Math.ceil(parseInt(new Date(deadline) - new Date())/1000/60/60/24)
-	var tamany = Math.max((25/Math.max(dies,1)),12)+"px";
+	var tamany = Math.max((40/Math.max(dies,1)),12)+"px";
 
 	//posa indicador
 	var td=tr.childNodes[0]
-	td.innerHTML+=" <b onclick=\"event.stopPropagation();if(confirm('Esborrar data límit?')){window.location='esborraDeadline.php?id="+id_dl+"'}\" style='font-size:"+tamany+";cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:#f78181'> "+dies+" dies</b>";
+	td.innerHTML+=" <b title='Esborrar data límit ("+deadline+")' onclick=\"event.stopPropagation();if(confirm('Esborrar data límit?')){window.location='esborraDeadline.php?id="+id_dl+"'}\" style='font-size:"+tamany+";cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:#f78181'> "+dies+"d</b>";
 }
 
 function llegenda()
