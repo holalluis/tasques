@@ -22,7 +22,6 @@
 			vertical-align:top;
 			margin:1em;
 		}
-		table{border:1px solid #ccc}
 	</style>
 	<script>
 		function init()
@@ -120,7 +119,7 @@
 <?php
 	function espai()
 	{
-		echo "<tr><td colspan=5 style=border:none;padding:0.4em;background-color:#ddd>";
+		echo "<tr><td colspan=5 style=padding:0.4em;background-color:#ddd>";
 	}
 ?>
 

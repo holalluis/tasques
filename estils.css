@@ -21,10 +21,10 @@ div.popup
 {
 	border:1px solid #ccc;
 	background:#fafafa;
-	color:#666;
+	color:#777;
 	position:absolute;
 	padding:0.5em;
-	box-shadow: 5px 5px 5px #888;
+	box-shadow: 0 4px 3px -3px rgba(0,0,0,0.1);
 }
 
 div.popup div.dia {cursor:pointer;border-radius:0.5em}
@@ -64,6 +64,6 @@ div.projecte{
 }
 
 tr.tasca{ font-size:12px; background-color:lightblue; }
-tr.tasca:hover {background:red}
+tr.tasca:hover {background:rgba(183,222,237,1);}
 tr[acabada] > td{ background-color:#af0; }
 

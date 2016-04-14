@@ -2,10 +2,8 @@
 	#footer {
 		clear: both;
 		height: 3em;
-
 		font-size:12px;
 		margin:1em 0 0 0;
-		background:#fafafa;
 		padding:1em;
 		margin-top:10em;
 		border-top:1px solid #eee;

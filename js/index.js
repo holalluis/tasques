@@ -34,7 +34,7 @@ function programa(id,ev)
 		if(!deadl) div.style.borderRight="1px solid #ddd"
 		div.style.paddingRight="10px"
 		div.className="inline";
-		div.innerHTML="<span style=color:black>Ho faré:</span>";
+		div.innerHTML="<span style=color:black;font-size:12px>Programar:</span>";
 		var opcions = {
 			Dilluns:0,
 			Dimarts:1,
@@ -64,7 +64,7 @@ function programa(id,ev)
 		var divDL=document.createElement('div');
 		popup.appendChild(divDL);
 		divDL.className='inline';
-		divDL.innerHTML="<span style=color:black>Data límit:</span>"
+		divDL.innerHTML="<span style=color:black;font-size:12px>Data límit:</span>"
 		var input = document.createElement('input');
 		divDL.appendChild(input);
 		input.style.display='block'
@@ -107,11 +107,11 @@ function tascaProgramada(id,dia)
 	tr.setAttribute('sched',true)
 
 	//"dia" es un numero de 0 a 6
-	dies=["Dll","Dm","Dx","Dj","Dv","Ds","Dg"];
+	dies=["Dl","Dm","Dx","Dj","Dv","Ds","Dg"];
 
 	//posa indicador
 	var td = tr.childNodes[0];
-	td.innerHTML+=" <b title='Desprogramar' onclick=\"event.stopPropagation();if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}\" style='cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:orange'> "+dies[dia]+"</b>";
+	td.innerHTML+=" <b title='Desprogramar' onclick=\"event.stopPropagation();if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}\" style='font-family:monospace;cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:orange'> "+dies[dia]+"</b>";
 }
 
 function tascaDeadline(id,deadline,id_dl)
@@ -129,7 +129,7 @@ function tascaDeadline(id,deadline,id_dl)
 
 	//posa indicador
 	var td=tr.childNodes[0]
-	td.innerHTML+=" <b title='Esborrar data límit ("+deadline+")' onclick=\"event.stopPropagation();if(confirm('Esborrar data límit?')){window.location='esborraDeadline.php?id="+id_dl+"'}\" style='font-size:"+tamany+";cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:#f78181'> "+dies+"d</b>";
+	td.innerHTML+=" <b title='Esborrar data límit ("+deadline+")' onclick=\"event.stopPropagation();if(confirm('Esborrar data límit?')){window.location='esborraDeadline.php?id="+id_dl+"'}\" style='font-family:monospace;font-size:"+tamany+";cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:#f78181'> "+dies+"d</b>";
 }
 
 function llegenda()

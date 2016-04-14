@@ -15,7 +15,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<title>Tasques | <?php echo $row['nom'] ?></title>
 	<link rel=stylesheet href='estils.css'>
-	<style> th{ border:1px solid #ccc; } </style>
+	<style> th,td{ border:1px solid #ccc; } </style>
 	<script>
 		//variable global: TODO posar on es fa servir
 		var id=<?php echo $id ?>;
@@ -183,7 +183,7 @@
 
 <!--opcions del projecte-->
 <table cellpadding=10 style=margin:1em>
-	<tr><th rowspan=3 style=background:#ccc>Opcions
+	<tr><th rowspan=3 style=background:#eee>Opcions
 	<!--canvia AREA -->
 	<tr><th>
 		Àrea actual: 
@@ -207,7 +207,7 @@
 	<tr><th>
 		<button style=background-color:#f77;padding:0.5em 
 			onclick=esborraProjecte()>
-			Esborra projecte
+			&#9888; Esborra projecte
 		</button>
 </table>
 

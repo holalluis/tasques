@@ -66,7 +66,7 @@
 						Esborra</button>";
 		}
 		//formulari nova tasca
-		echo "<tr><td colspan=2>
+		echo "<tr><td colspan=1>
 				<form action=novaTasca.php method=get id=form_nt_pr_$id >";
 
 		//input hidden amb el valor de l'id projecte
@@ -76,7 +76,7 @@
 		echo "<input 	name=descripcio 
 						placeholder='Nova tasca' 
 						autocomplete=off 
-						style='border:1px solid #bbb;padding:0.2em;' 
+						style='width:95%;border:1px solid #bbb;padding:0.2em;' 
 						required ";
 		//donar focus a <input> nova tasca si es el projecte ressaltat
 		//treure ressaltat al treure focus del <input>
