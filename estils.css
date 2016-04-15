@@ -1,5 +1,8 @@
 *{margin:0}
-body{height:100%;font-family:Helvetica;overflow-y:scroll}
+body{
+	height:100%;
+	font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+	overflow-y:scroll}
 h2,h4{margin:0.7em}
 table{border-collapse:collapse} 
 td{border:1px solid white}
