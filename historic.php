@@ -12,6 +12,7 @@
 </head><body><center>
 <!--menu--><?php include 'menu.php' ?>
 <!--titol--><h2>Històric tasques acabades</h2>
+<!--bro tip--><h4>Pots buscar dins aquesta pàgina amb CTRL+F</h4>
 
 <!--tasques programades per aquesta setmana-->
 <table cellpadding=5>
