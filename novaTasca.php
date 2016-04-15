@@ -8,7 +8,7 @@ include 'connecta_mysql.php';
 
 //entrada
 $id_projecte=$_GET['id_projecte'];
-$descripcio=mysql_real_escape_string($_GET['descripcio']);
+$descripcio=ucfirst(mysql_real_escape_string($_GET['descripcio']));
 $url_seguent=$_GET['url_seguent'];
 
 //si descripcio esta en blanc

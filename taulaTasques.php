@@ -1,9 +1,6 @@
 <div style="text-align:left;padding:1em">
 <!-- fragment dins la pagina index.php -->
 <?php
-	//connecta
-	include 'connecta_mysql.php';
-
 	$sql="SELECT * FROM projectes ORDER BY id DESC";
 	$result=mysql_query($sql) or die(mysql_error());
 
@@ -45,7 +42,7 @@
 
 			//descripcio
 			echo "<td title='Programar' onclick=programa($id_task,event) style='cursor:pointer'>";
-			echo $roww['descripcio'];
+			echo $roww['descripcio']; //first letter uppercase
 
 			//checkbox per tasca acabada
 			echo "<td align=center width=1>";

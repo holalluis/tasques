@@ -8,12 +8,13 @@
 	$result=mysql_query($sql);
 	$row=mysql_fetch_array($result);
 	$area=$row['id_area'];
+	$nom=$row['nom'];
 ?>
 <!doctype html><html><head>
 	<meta charset=utf-8 />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Tasques | <?php echo $row['nom'] ?></title>
+	<title>Tasques | <?php echo $nom ?></title>
 	<link rel=stylesheet href='estils.css'>
 	<style> th,td{ border:1px solid #ccc; } </style>
 	<script>
@@ -75,7 +76,7 @@
 <?php include 'menu.php' ?>
 
 <!--titol editable-->
-<h2 onclick=editable(this)><?php echo $row['nom'] ?></h2>
+<h2 onclick=editable(this)><?php echo $nom ?></h2>
 
 <!--tasques del projecte-->
 <table cellpadding=7 style="margin:0 2em 0 2em;">

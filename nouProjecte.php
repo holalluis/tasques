@@ -7,7 +7,7 @@
 include 'connecta_mysql.php';
 
 //entrada
-$nom=mysql_real_escape_string($_GET['nom']);
+$nom=ucfirst(mysql_real_escape_string($_GET['nom']));
 $id_area=$_GET['area'];
 
 //check entrada
