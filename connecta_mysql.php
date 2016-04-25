@@ -12,8 +12,11 @@ mysql_select_db("tasques");
  */
 if($_SERVER['SERVER_NAME']!='localhost') 
 {
-	echo $_SERVER['SERVER_NAME'];
-	exit(' ERROR. No tens permis per veure aquesta pagina, no ets localhost');
+	if($_SERVER['SERVER_NAME']=="192.168.103.74")
+	{
+		;//servidor public
+	}
+	else exit(' ERROR. No tens permis per veure aquesta pagina, no ets localhost');
 }
 
 ?>
