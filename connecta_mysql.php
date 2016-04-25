@@ -1,9 +1,8 @@
 ﻿<?php
 /*
- * Connecta a la base de dades tasques
+ * Connecta a base de dades tasques
  *
  */
-
 mysql_connect("127.0.0.1","root","") or exit("error de connexió");
 mysql_select_db("tasques");
 
@@ -13,10 +12,8 @@ mysql_select_db("tasques");
  */
 if($_SERVER['SERVER_NAME']!='localhost') 
 {
-	if(isset($_GET['pass']) && $_GET['pass']=='bol729sh')
-	{
-		; //continua
-	}
-	else exit('ERROR. No tens permis per veure aquesta pagina. Escriu password a la url.');
+	echo $_SERVER['SERVER_NAME'];
+	exit(' ERROR. No tens permis per veure aquesta pagina, no ets localhost');
 }
+
 ?>
