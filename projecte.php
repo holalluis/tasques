@@ -190,14 +190,13 @@
 		Àrea actual: 
 		<select onchange=canviaArea() id=selectArea>
 			<?php
-				$area_actual = $row['id_area'];
 				$res=mysql_query("SELECT * FROM arees");
 				while($row=mysql_fetch_array($res))
 				{
 					$id_area = $row['id'];
 					$nom_area = $row['nom'];
 
-					if($id_area == $area_actual)
+					if($id_area == $area)
 						echo "<option value=$id_area selected>$nom_area</option>";
 					else
 						echo "<option value=$id_area>$nom_area</option>";
