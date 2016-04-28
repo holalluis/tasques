@@ -12,7 +12,7 @@ mysql_select_db("tasques");
  */
 if($_SERVER['SERVER_NAME']!='localhost') 
 {
-	if($_SERVER['SERVER_NAME']=="192.168.103.74")
+	if($_SERVER['SERVER_NAME']=="192.168.103.74" || $_SERVER['SERVER_NAME']=="webapps")
 	{
 		;//servidor public
 	}
