@@ -27,7 +27,7 @@
 		//si no hi ha tasques marca-ho en gris
 		if(mysql_num_rows($res)==0)
 		{
-			echo "<tr><td style='background:#ccc;font-size:10px;color:#666;text-align:center' colspan=3>No hi ha tasques";
+			echo "<tr><td style='background:#ccc;font-size:10px;color:#666;text-align:center' colspan=3><i>~No hi ha tasques</i>";
 		}
 
 		//recorre les tasques

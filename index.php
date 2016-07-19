@@ -33,7 +33,7 @@
 			<input name=nom placeholder="Nou projecte" 
 				autocomplete=off required 
 				style="padding:0.5em;border:1px solid #ccc"><!--
-			--><button type=submit style=height:2.25em>OK</button> 
+			--><button type=submit style="height:2.28em;border-radius:0;margin-left:-1px">OK</button> 
 		</form>
 	<td class=menu>
 		<!--arees-->
