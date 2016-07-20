@@ -13,20 +13,17 @@
 
 <hr><div><code>
 <?php 
-	//execute the two commands
-
-	//1
+	//try two commands $com1 and $com2
 	$result=exec($com1);
-
-	//2
-	if($result=="") $result=exec($com2);
+	if($result=="") 
+		$result=exec($com2);
 
 	//show warning if command fails
 	if($result=="")
 	{
 		?>
 		<h4>ERROR. Make sure you have <a href=https://git-scm.com/>git</a> installed in the correct folder in your computer</h4>
-		Locations that failed to locate git:
+		I've looked into the following locations without success:
 		<ul>
 			<?php
 				echo "<li>$com1";
