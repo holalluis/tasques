@@ -18,10 +18,14 @@
 				ORDER BY deadline ASC";
 		$res=mysql_query($sql) or die("error");
 		
-		echo "<tr><th colspan=3 title='Dates límit en els pròxims 7 dies' style=cursor:help>Dates Límit Pròximes (".mysql_num_rows($res).")";
+		echo "<tr><th colspan=3> 
+				Dates límit en els propers 7 dies (".mysql_num_rows($res).")";
 	?>
-	<tr><th>Tasca<th>Projecte<th>Dies (Data Límit)
+	<tr><th>Tasca<th>Projecte<th>Falten
 		<?php
+			if(mysql_num_rows($res)==0)
+				echo "<tr><td colspan=3 style='font-style:italic;color:#666'>~No tens dates límit pròximes";
+
 			while($row=mysql_fetch_array($res))
 			{
 				$id_tasca 	 = $row['id_tasca'];
@@ -35,7 +39,7 @@
 				$falten = (strtotime($deadline)-strtotime(date("Y/m/d")))/(60*60*24);
 
 				echo "<td align=center>
-					<b style='font-size:".max((80/max($falten,1)),14)."px'>$falten</b> ($deadline)";
+					<b style='font-size:".max((70/max($falten,1)),14)."px'>$falten dies</b> ($deadline)";
 			}
 		?>
 </table>

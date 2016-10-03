@@ -48,13 +48,13 @@
 <?php include 'menu.php' ?>
 <h2>Dates límit (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM deadlines")) ?>) </h2>
 
-<table cellpadding=5>
+<table cellpadding=5 style=width:70%>
 	<tr>
 		<th>Tasca
 		<th>Projecte
 		<th>Dies (Data Límit)
-		<th>Completada
-		<th>Opcions
+		<th>Marcar "en espera"
+		<th>Esborrar data límit
 	<?php
 		$sql="SELECT 
 					deadlines.id 			AS id_deadline,
@@ -71,6 +71,10 @@
 					tasques.id_projecte=projectes.id
 				ORDER BY deadline ASC";
 		$result = mysql_query($sql);
+
+		if(mysql_num_rows($result)==0)
+			echo "<tr><td colspan=5><i style=color:#666>~No tens dates límit. Vés a <a href=index.php>Tasques</a> i fes click sobre una tasca per assignar-li una data límit</i>";
+
 		while($row=mysql_fetch_array($result))
 		{
 			$id_deadline=	$row['id_deadline'];

@@ -2,6 +2,7 @@
 <!-- fragment dins la pagina index.php -->
 <?php
 	$sql="SELECT * FROM projectes ORDER BY id DESC";
+
 	$result=mysql_query($sql) or die(mysql_error());
 
 	//recorre els projectes
@@ -41,7 +42,7 @@
 			else 			echo "<tr class=tasca id=tasca$id_task >";
 
 			//descripcio
-			echo "<td title='Programar' onclick=programa($id_task,event) style='cursor:pointer'>";
+			echo "<td title='Click per programar la tasca' onclick=programa($id_task,event) style='cursor:pointer'>";
 			echo $roww['descripcio']; //first letter uppercase
 
 			//checkbox per tasca acabada
@@ -62,6 +63,7 @@
 						onclick=esborraTasca($id_task)
 						onmouseover=clickLlarg($id_task)
 						onmouseout=stopClickLlarg($id_task)
+						title='Esborra tasca. Mantenir per esborrar sense històric de tasques acabades.'
 						>Esborra</button>";
 		}
 		//formulari nova tasca

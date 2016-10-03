@@ -69,7 +69,6 @@
 			for(i=0;i<avuis.length;i++)
 			{
 				avuis[i].style.border='1px solid #ccc';
-				avuis[i].style.backgroundColor='#f8fa58';
 				avuis[i].textContent+=" (AVUI)"
 			}
 			var dema = (new Date()).getDay();
@@ -113,123 +112,129 @@
 
 <!--titol-->
 <h2> 
-	Tasques per aquesta setmana (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM pla_setmanal")) ?>)
+	Tasques a fer aquesta setmana (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM pla_setmanal")) ?>)
 </h2>
 
 <?php
 	function espai()
 	{
-		echo "<tr><td colspan=5 style=padding:0.4em;background-color:#ddd>";
+		echo "<tr espai><td colspan=5 style=padding:0.2em;background-color:white;border:none>";
 	}
 ?>
 
 <!--tasques programades per aquesta setmana-->
-<table cellpadding=5>
-	<tr> <th>Dia <th>Tasca <th>Projecte <th>Completada <th>Opcions
-	<tr> <?php
-			//totes les tasques del pla setmanal amb tota la seva info associada
-			$res=mysql_query("	SELECT 
-									pla_setmanal.id 		AS id,
-									pla_setmanal.id_tasca 	AS id_tasca,
-									pla_setmanal.dia		AS dia,
-									tasques.descripcio		AS descripcio,
-									tasques.id_projecte		AS id_projecte,
-									tasques.acabada			AS acabada,
-									projectes.nom			AS nom_projecte,
-									arees.id				AS id_area,
-									arees.nom				AS nom_area
-								FROM 	
-									pla_setmanal,tasques,projectes,arees
-								WHERE
-									pla_setmanal.id_tasca=tasques.id AND
-									tasques.id_projecte=projectes.id AND
-									projectes.id_area=arees.id
-								ORDER BY dia ASC
-								");
-			$da=0;
-			while($row=mysql_fetch_array($res))
+<table id=pla cellpadding=5 style="width:70%">
+	<style>
+		/**estils dels botons d'opcions*/
+		td[accions] {text-align:left}
+		td[accions] button {display:inline-block;height:20px;vertical-align:top}
+	</style>
+
+	<tr> <th>Dia <th>Tasca <th>Projecte <th>Marcar "en espera"<th>Opcions
+	<?php
+		//totes les tasques del pla setmanal amb tota la seva info associada
+		$res=mysql_query("	SELECT 
+								pla_setmanal.id 		AS id,
+								pla_setmanal.id_tasca 	AS id_tasca,
+								pla_setmanal.dia		AS dia,
+								tasques.descripcio		AS descripcio,
+								tasques.id_projecte		AS id_projecte,
+								tasques.acabada			AS acabada,
+								projectes.nom			AS nom_projecte,
+								arees.id				AS id_area,
+								arees.nom				AS nom_area
+							FROM 	
+								pla_setmanal,tasques,projectes,arees
+							WHERE
+								pla_setmanal.id_tasca=tasques.id AND
+								tasques.id_projecte=projectes.id AND
+								projectes.id_area=arees.id
+							ORDER BY dia ASC
+							");
+
+		if(mysql_num_rows($res)==0)
+			echo "<tr><td colspan=5><i style=color:#666>~No tens tasques programades. Vés a <a href=index.php>Tasques</a> i fes click sobre una tasca per assignar-li un dia d'aquesta setmana.</i>";
+
+		$da=0;
+		while($row=mysql_fetch_array($res))
+		{
+			$id=		  $row['id'];
+			$id_tasca=	  $row['id_tasca'];
+			$dia=		  $row['dia'];
+			$des=		  $row['descripcio'];
+			$pro=		  $row['id_projecte'];
+			$acabada=	  $row['acabada'];
+			$nomProjecte= $row['nom_projecte'];
+			$id_area=	  $row['id_area'];
+			$nomArea=	  $row['nom_area'];
+			
+			//posa un espai si el dia anterior és diferent
+			if($da!=$dia) espai($dia);
+
+			//marca en verd si la tasca esta acabada
+			if($acabada==1) echo "<tr id=$id_tasca class=tasca acabada=true>"; 
+			else 			echo "<tr id=$id_tasca class=tasca>";
+
+			//dia
+			switch($dia)
 			{
-				$id=		  $row['id'];
-				$id_tasca=	  $row['id_tasca'];
-				$dia=		  $row['dia'];
-				$des=		  $row['descripcio'];
-				$pro=		  $row['id_projecte'];
-				$acabada=	  $row['acabada'];
-				$nomProjecte= $row['nom_projecte'];
-				$id_area=	  $row['id_area'];
-				$nomArea=	  $row['nom_area'];
-
-				//posa un espai si el dia anterior és diferent
-				if($da!=$dia) espai();
-
-				//marca en verd si la tasca esta acabada
-				if($acabada==1) echo "<tr id=$id_tasca class=tasca acabada=true>"; 
-				else 			echo "<tr id=$id_tasca class=tasca>";
-
-				//dia
-				switch($dia)
-				{
-					case 0: $dia_nom="Dilluns";   break;
-					case 1: $dia_nom="Dimarts";   break;
-					case 2: $dia_nom="Dimecres";  break;
-					case 3: $dia_nom="Dijous"; 	  break;
-					case 4: $dia_nom="Divendres"; break;
-					case 5: $dia_nom="Dissabte";  break;
-					case 6: $dia_nom="Diumenge";  break;
-				}
-				echo "<th class=dia_$dia align=left>$dia_nom";
-
-				//Descripcio de la tasca
-				echo "<td>$des";
-
-				//Projecte
-				echo "<td align=center> <a href='projecte.php?id=$pro' title='Àrea: $nomArea'>$nomProjecte</a>";
-
-				//Botó per Marcar la tasca completada
-				echo "<td align=center>";
-				if($acabada==1)
-					echo "<input type=checkbox onclick=modificaTasca($id_tasca,0,this) checked=true>";
-				else
-					echo "<input type=checkbox onclick=modificaTasca($id_tasca,1,this)>";
-
-				//Accions botons: moure tasca al dia següent i anterior, esborrar
-				echo "<td align=center>";
-
-				//botons per moure tasques al dia anterior o el seguent
-				if($dia!=0)
-				{
-					//no es poden passar tasques abans de dilluns
-					echo "<button 
-								onclick=mouAlDiaAnterior($id)
-								style=font-size:10px 
-								title='Mou al dia anterior'
-								>&uarr;
-							</button>";
-				}
-				if($dia!=6)
-				{
-					//no es poden passar tasques més enllà de diumenge
-					echo "	<button 
-								onclick=mouAlDiaSeguent($id)
-								style=font-size:10px 
-								title='Mou al dia següent'
-								>&darr;
-							</button>";
-				}
-
-				//botó esborrar
-				echo " 	<button	onclick=esborraDelPlaSetmanal($id_tasca)
-								style='font-size:10px;background-color:#e50' 
-								title='Esborra del pla setmanal'
-								>X
-						</button> ";
-
-
-				//dia anterior
-				$da=$dia;
+				case 0: $dia_nom="Dilluns";   break;
+				case 1: $dia_nom="Dimarts";   break;
+				case 2: $dia_nom="Dimecres";  break;
+				case 3: $dia_nom="Dijous"; 	  break;
+				case 4: $dia_nom="Divendres"; break;
+				case 5: $dia_nom="Dissabte";  break;
+				case 6: $dia_nom="Diumenge";  break;
 			}
-			espai();
-		?>
+			echo "<th class=dia_$dia align=left>$dia_nom";
+
+			//Descripcio de la tasca
+			echo "<td>$des";
+
+			//Projecte
+			echo "<td align=center> <a href='projecte.php?id=$pro' title='Àrea: $nomArea'>$nomProjecte</a>";
+
+			//Botó per Marcar la tasca completada
+			echo "<td align=center>";
+			if($acabada==1)
+				echo "<input type=checkbox onclick=modificaTasca($id_tasca,0,this) checked=true>";
+			else
+				echo "<input type=checkbox onclick=modificaTasca($id_tasca,1,this)>";
+
+			//Accions botons: moure tasca al dia següent i anterior, esborrar
+			echo "<td align=center accions>";
+
+			//botó esborrar
+			echo " 	<button	onclick=esborraDelPlaSetmanal($id_tasca)
+							style='font-size:10px;background-color:#e50' 
+							title='Esborra del pla setmanal'
+							>X
+					</button> ";
+
+			//botons per moure tasques al dia anterior o el seguent
+			if($dia!=0)
+			{
+				//no es poden passar tasques abans de dilluns
+				echo "<button 
+							onclick=mouAlDiaAnterior($id)
+							title='Mou al dia anterior'
+							>&uarr;
+						</button>";
+			}
+			if($dia!=6)
+			{
+				//no es poden passar tasques més enllà de diumenge
+				echo "	<button 
+							onclick=mouAlDiaSeguent($id)
+							title='Mou al dia següent'
+							>&darr;
+						</button>";
+			}
+
+			//dia anterior
+			$da=$dia;
+		}
+	?>
 </table>
 
 <!--periodiques i alertes-->
@@ -237,7 +242,7 @@
 	<!--periodiques-->
 	<?php include 'funcions.php' ?>
 	<table id=periodiques cellpadding=5>
-		<tr><th colspan=3 style=background:yellow>Tasques Periòdiques AVUI
+		<tr><th colspan=3 style=background:yellow>Tasques periòdiques AVUI
 		<tr><th>Tasca<th>Freqüència<th>Completada
 		<?php
 			$dia=date('w'); //0:diumenge, 1:dilluns, 2:dimarts 
@@ -293,7 +298,14 @@
 							FROM 	deadlines,pla_setmanal
 							WHERE 	deadlines.id_tasca=pla_setmanal.id_tasca
 						");
+
 		while($row=mysql_fetch_array($res)) 
 			echo "tascaDeadline(".$row['id'].");\n";
 	?>
+</script>
+
+<script>
+	//si la segona fila de la taula és un espai, remou la fila
+	var t=document.querySelector('table#pla')
+	if(t.rows[1].hasAttribute('espai'))t.deleteRow(1)
 </script>

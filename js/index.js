@@ -9,7 +9,6 @@ function geClass(className){ 	return document.getElementsByClassName(className) 
 /** Variables pel click llarg (esborra tasca afegint a historic) */
 
 	var sto_handle;
-
 	function clickLlarg(id_task)
 	{
 		sto_handle = setTimeout(function(){
@@ -71,9 +70,10 @@ function programa(id,ev)
 		{
 			var op = document.createElement('div'); 
 			div.appendChild(op);
-			op.className="dia"
+			op.className="dia";
+
 			if(opcions[dia]==avui)
-				op.innerHTML="<b>- "+dia+"</b>";
+				op.innerHTML="<b>- "+dia+" (avui)</b>";
 			else
 				op.innerHTML="- "+dia;
 			op.setAttribute('onclick','enviaTascaAPlaSetmanal('+id+','+opcions[dia]+')');
@@ -86,7 +86,7 @@ function programa(id,ev)
 		var divDL=document.createElement('div');
 		popup.appendChild(divDL);
 		divDL.className='inline';
-		divDL.innerHTML="<span style=color:black;font-size:12px>Data límit:</span>"
+		divDL.innerHTML="<span style=color:black;font-size:12px>Afegir data límit:</span>"
 		var input = document.createElement('input');
 		divDL.appendChild(input);
 		input.style.display='block'
@@ -133,7 +133,7 @@ function tascaProgramada(id,dia)
 
 	//posa indicador
 	var td = tr.childNodes[0];
-	td.innerHTML+=" <b title='Desprogramar' onclick=\"event.stopPropagation();if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}\" style='font-family:monospace;cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:orange'> "+dies[dia]+"</b>";
+	td.innerHTML+=" <b title='Esborra del pla setmanal' onclick=\"event.stopPropagation();if(confirm('Desprogramar?')){window.location='esborraDelPlaSetmanal.php?id="+id+"'}\" style='font-family:monospace;cursor:pointer;padding:1px;border:1px solid #666;border-radius:0.3em;background:orange'> "+dies[dia]+"</b>";
 }
 
 function tascaDeadline(id,deadline,id_dl)

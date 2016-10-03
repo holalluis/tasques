@@ -80,7 +80,7 @@
 			$nom_area=$row['nom'];
 			$id_area=$row['id'];
 			echo "<tr>";
-			echo "<td onclick=editaNom(this,$id_area)>$nom_area";
+			echo "<td onclick=editaNom(this,$id_area) style=cursor:pointer>$nom_area";
 
 			//compta el numero de projectes que té cada àrea
 			echo "<td>".mysql_num_rows(mysql_query("SELECT 1 FROM projectes WHERE id_area=$id_area"));

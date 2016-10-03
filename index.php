@@ -1,4 +1,4 @@
-<?php include 'connecta_mysql.php' ?>
+<?php include'connecta_mysql.php'?>
 <!doctype html><html><head>
 	<meta charset=utf-8>
 	<title>Tasques</title>
@@ -6,6 +6,9 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<script src="js/index.js"></script>
+	<style>
+		.menu * {vertical-align:middle}
+	</style>
 </head><body><center>
 <!--menu--><?php include "menu.php"?>
 
@@ -37,7 +40,7 @@
 		</form>
 	<td class=menu>
 		<!--arees-->
-		<span title="Una àrea és un conjunt de projectes"> Àrees </span> 
+		<span title="Una àrea és un conjunt de projectes"> Àrea </span> 
 		<?php
 			$res=mysql_query("SELECT * FROM arees");
 			$n_arees=mysql_num_rows($res);
@@ -61,7 +64,7 @@
 			}
 		?>
 		<!--editar arees-->
-		<a style="border:1px solid #ccc;padding:0.5em;border-radius:0.4em" href="editaArees.php">Configuració àrees</a>
+		<a title="Configuració" style="font-size:25px;border:1px solid #ccc;border-radius:0.4em" href="editaArees.php">&#9998;</a>
 	<td class=menu>
 		<!--show legend-->
 		<a style="font-size:14px;border:1px solid;padding:0.5em;border-radius:0.4em" href=# onclick=llegenda()>Veure Llegenda</a>
@@ -78,8 +81,8 @@
 			<td><span style="background:white"		> Projecte 			   </span>
 			<td><span style="background:lightblue"	> Tasca				   </span>
 			<td><span style="background:#af0"		> En espera      </span>
-			<td><span style="background:orange;border-radius:0.3em;font-weight:bold"	    > Tasca programada     </span>
-			<td><span style="background:#f78181;border-radius:0.3em;font-weight:bold"	> Data límit </span>
+			<td><span style="background:orange;border-radius:0.3em;font-weight:bold"	    > Tasca programada (dia de la setmana)    </span>
+			<td><span style="background:#f78181;border-radius:0.3em;font-weight:bold"	> Data límit (dies que falten) </span>
 	</table>
 </div>
 

@@ -21,13 +21,20 @@
 
 <!--titol-->
 <h2>Tasques periòdiques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM periodiques"))?>)</h2>
-<h4>Configuració per tasques repetitives que apareixen al pla setmanal en funció de la seva freqüència</h4>
+<h4>Configura aquí les tasques repetitives que fas cada dia o cada setmana. Apareixeran al pla setmanal.</h4>
 
 <!--taula de tasques periodiques-->
-<table cellpadding=5>
+<table cellpadding=5 style=width:70%>
+	<style>
+		tr[tasca] td {border:1px solid #ccc}
+	</style>
 	<tr><th>Tasca			<th>Freqüència &darr;		<th>Opcions
 	<?php
 		$result=mysql_query("SELECT * FROM periodiques ORDER BY freq ASC");
+
+		if(mysql_num_rows($result)==0)
+			echo "<tr><td colspan=3 style='border:1px solid #ccc;font-style:italic;background:#fafafa'>~No tens tasques periòdiques.";	
+
 		$fa=0; //freq anterior
 		while($row=mysql_fetch_array($result))
 		{
@@ -36,22 +43,21 @@
 			$freq=$row['freq'];
 
 			//posa un color de fila diferent segons la freqüència de la tasca
-			$color="lightblue";
+			$color="";
 
 			//posa un espai si la frequencia és diferent de l'anterior
 			if($fa!=$freq) espaiador();
 
-			echo "<tr style=background-color:$color;>";
+			echo "<tr style='background-color:$color' tasca>";
 			echo "<td>$nom";
-			echo "<td style=color:#666>".freq($freq);
+			echo "<td>".freq($freq);
 			echo "<td align=center><button onclick=esborra($id)>Esborra</button>";
 			$fa=$freq;
 		}
 	?>
-	<?php espaiador() ?>
 	<tr><th>
 		<form action=novaTascaPeriodica.php method=GET>
-			<input name=nom placeholder="Nova tasca periòdica" required autocomplete=off>
+			<input name=nom placeholder="Nova tasca periòdica" required autocomplete=off style=padding:0.7em>
 			<th><select name=freq>
 				<option value=0><?php echo freq(0) ?>
 				<option value=1><?php echo freq(1) ?>

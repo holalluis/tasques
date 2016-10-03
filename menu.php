@@ -2,13 +2,14 @@
 <?php
 	function creaLink($url,$contingut)
 	{
-		if($_SERVER['PHP_SELF']=="/tasques/$url")
-		{
-			echo "<a style=cursor:pointer>$contingut</a>";
-		}
-		else 
-			echo "<a href='$url'>$contingut</a>";
-		echo " <span style=color:#aaa>&#9474;</span> ";
+		//atribut href de l'element <a>
+		$href = ($_SERVER['PHP_SELF']=="/tasques/$url") ? "" : "href='$url'";
+
+		//link
+		echo "<a $href>$contingut</a> ";
+
+		//separador
+		echo "<span style=color:#aaa>&#9474;</span> ";
 	}
 ?>
 <div style="
