@@ -22,6 +22,12 @@
 			vertical-align:top;
 			margin:1em;
 		}
+		span.avui {
+			background:yellow;
+			padding:0.2em;
+			border:1px solid #ccc;
+			border-radius:0.4em;
+		}
 	</style>
 	<script>
 		function init()
@@ -69,7 +75,7 @@
 			for(i=0;i<avuis.length;i++)
 			{
 				avuis[i].style.border='1px solid #ccc';
-				avuis[i].textContent+=" (AVUI)"
+				avuis[i].innerHTML+=" <span class=avui>AVUI</span>"
 			}
 			var dema = (new Date()).getDay();
 			var demas = document.getElementsByClassName('dia_'+dema);
@@ -130,7 +136,7 @@
 		td[accions] button {display:inline-block;height:20px;vertical-align:top}
 	</style>
 
-	<tr> <th>Dia <th>Tasca <th>Projecte <th>Marcar "en espera"<th>Opcions
+	<tr><th>Dia<th>Tasca<th>Projecte<th>Marcar "en espera"<th>Opcions
 	<?php
 		//totes les tasques del pla setmanal amb tota la seva info associada
 		$res=mysql_query("	SELECT 

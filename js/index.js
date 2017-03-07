@@ -190,8 +190,12 @@ function mostraArea(area)
 	//ressalta el boto que activa l'area
 	document.getElementById('boto_area'+area).classList.add('actiu')
 
-	//per acabar, selecciona el valor de l'area triada en el camp "nou projecte"
+	//selecciona el valor de l'area triada en el camp "nou projecte"
 	document.getElementById('area_select').value=area
+
+	//mostra el nom de l'area al div id=area_actual
+	var nom=document.getElementById('boto_area'+area).innerHTML
+	document.querySelector('#area_actual').innerHTML=nom
 }
 
 function modificaTasca(id,acabada,input)

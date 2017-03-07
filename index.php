@@ -9,6 +9,13 @@
 	<style>
 		.menu * {vertical-align:middle}
 	</style>
+	<style>
+		div#area_actual {
+			font-size:18px;
+			font-family:'Lucida consola',monospace;
+			font-weight:bold;
+		}
+	</style>
 </head><body><center>
 <!--menu--><?php include "menu.php"?>
 
@@ -19,25 +26,7 @@
 		<h2 style="cursor:pointer;margin-right:4em" onclick="window.location=window.location.pathname">
 			Tasques (<?php echo mysql_num_rows(mysql_query("SELECT 1 FROM tasques")) ?>)
 		</h2>
-	<td class=menu>
-		<form action="nouProjecte.php" method=get style="display:inline-block">
-			<!-- selecciona area pel nou projecte: SEMPRE OCULT, ja que es selecciona sol (fx mostraArea()) -->
-			<select name=area id=area_select style=display:none>
-				<?php
-					$res=mysql_query("SELECT * FROM arees");
-					while($row=mysql_fetch_array($res))
-					{
-						$area_id=$row['id'];
-						$area_nom=$row['nom'];
-						echo "<option value=$area_id>$area_nom</option>";
-					}
-				?>
-			</select>
-			<input name=nom placeholder="Nou projecte" 
-				autocomplete=off required 
-				style="padding:0.5em;border:1px solid #ccc"><!--
-			--><button type=submit style="height:2.28em;border-radius:0;margin-left:-1px">OK</button> 
-		</form>
+	</td>
 	<td class=menu>
 		<!--arees-->
 		<span title="Una àrea és un conjunt de projectes"> Àrea </span> 
@@ -64,10 +53,43 @@
 			}
 		?>
 		<!--editar arees-->
-		<a title="Configuració" style="font-size:25px;border:1px solid #ccc;border-radius:0.4em" href="editaArees.php">&#9998;</a>
+		<a 	href="editaArees.php"
+			title="Configuració" 
+			style="
+				border-radius:0.4em;
+				border:1px solid #ccc;
+				color:black;
+				font-size:20px;
+				text-decoration:none;
+				text-orientation:sideways;
+				" 
+			>...
+		</a>
+	</td>
+	<td class=menu>
+		<form action="nouProjecte.php" method=get style="display:inline-block">
+			<!-- selecciona area pel nou projecte: SEMPRE OCULT, ja que es selecciona sol (fx mostraArea()) -->
+			<select name=area id=area_select style=display:none>
+				<?php
+					$res=mysql_query("SELECT * FROM arees");
+					while($row=mysql_fetch_array($res))
+					{
+						$area_id=$row['id'];
+						$area_nom=$row['nom'];
+						echo "<option value=$area_id>$area_nom</option>";
+					}
+				?>
+			</select>
+			<input name=nom placeholder="Nou projecte" 
+				autocomplete=off required 
+				style="padding:0.5em;border:1px solid #ccc"><!--
+			--><button type=submit style="height:2.28em;border-radius:0;margin-left:-1px">OK</button> 
+		</form>
+	</td>
 	<td class=menu>
 		<!--show legend-->
 		<a style="font-size:14px;border:1px solid;padding:0.5em;border-radius:0.4em" href=# onclick=llegenda()>Veure Llegenda</a>
+	</td>
 </table>
 
 <!--legend-->
@@ -86,6 +108,10 @@
 	</table>
 </div>
 
+<!--area actual-->
+<div id=area_actual>
+	àrea actual
+</div>
 <!--tasques--><?php include 'taulaTasques.php'?>
 <!--fi pagina--><?php include 'footer.php'?>
 
