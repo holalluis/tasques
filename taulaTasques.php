@@ -19,7 +19,7 @@
 		echo "<table cellpadding=3 style='margin:0em;width:100%'>";
 
 		//primera fila: nom
-		echo "<tr><td colspan=3><a href='projecte.php?id=$id'>$nom</a>";
+		echo "<tr><td colspan=3><a href='projecte.php?id=$id'><span style=letter-spacing:2px>$nom</span></a>";
 
 		//recorre les tasques
 		$sql="SELECT * FROM tasques WHERE id_projecte=$id ORDER BY id ASC";

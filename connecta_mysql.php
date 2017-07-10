@@ -3,7 +3,7 @@
  * Connecta a base de dades tasques
  *
  */
-mysql_connect("127.0.0.1","root","") or exit("error de connexió");
+mysql_connect("127.0.0.1","root","bol729sh") or exit("error de connexió");
 mysql_select_db("tasques");
 
 /*
